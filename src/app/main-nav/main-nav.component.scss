@@ -32,9 +32,14 @@ mat-toolbar {
 }
 
 mat-toolbar a{
-  color: dimgrey;
+  color: #333b48;;
   display: inline-block;
   margin: 0 25px;
   font-size: 15px;
   text-decoration: none;
 }
+
+.material-icons-round{
+  color: #d3334d;
+}
+

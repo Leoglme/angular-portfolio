@@ -1,3 +1,8 @@
+.btn-primary {
+  background-color: #d3334d !important;
+  border-color: #c30f2d  !important; }
 
+.btn-primary:not([disabled]):not(.disabled).active, .btn-primary:not([disabled]):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+  background-color: #c30f2d  !important; }
 
 /*# sourceMappingURL=cards.component.css.map */
