@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%; }
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.card {
+  max-width: 300px;
+  margin: 20px; }
+
+.hidden {
+  display: none; }
+
+.responsive__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+#homeLogo {
+  width: 48px;
+  padding: 5px; }
+
+mat-toolbar {
+  position: sticky;
+  position: -webkit-sticky;
+  /* For macOS/iOS Safari */
+  top: 0;
+  /* Sets the sticky toolbar to be on top */
+  z-index: 1000;
+  /* Ensure that your app's content doesn't overlap the toolbar */ }
+
+.mat-icon-button.mat-button-base.mat-warn {
+  width: 58px !important;
+  height: 58px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  outline: none !important;
+  user-select: none !important;
+  color: #0000004a !important;
+  margin-left: 32px !important; }
+  .mat-icon-button.mat-button-base.mat-warn:hover {
+    background: #333b480a; }
+
+/*# sourceMappingURL=styles.css.map */
