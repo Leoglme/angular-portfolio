@@ -14,11 +14,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { CardsComponent } from './cards/cards.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { HomepageComponent } from './homepage/homepage.component';
+import { SkillsComponent } from './skills/skills.component';
+import { WorkComponent } from './work/work.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
-    CardsComponent
+    CardsComponent,
+    HomepageComponent,
+    SkillsComponent,
+    WorkComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

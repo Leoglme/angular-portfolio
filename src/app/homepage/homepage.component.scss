@@ -1,0 +1,232 @@
+#developer-illustration{
+  width: 735px;
+  left: 52vh;
+  position: relative;
+  top: 10vh;
+}
+
+app-homepage{
+  background: white;
+  height: 93vh;
+  width: 100%;
+}
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// => Functions
+@function multiple-box-shadow ($n) {
+  $value: '#{random(2000)}px #{random(2000)}px rgba(255,255,255,0.8)';
+  @for $i from 2 through $n {
+    $value: '#{$value} , #{random(2000)}px #{random(2000)}px rgba(255,255,255,0.8)';
+  }
+
+  @return unquote($value);
+}
+
+// => Variables
+$shadows-small:  multiple-box-shadow(300); // 750
+$shadows-medium: multiple-box-shadow(150); // 75
+$shadows-big:    multiple-box-shadow(75);  // 75
+$shadows-heavy:  multiple-box-shadow(25);  // 25
+$p-font: 'Josefin Slab';
+$title-font: 'Nunito';
+
+/**
+* GENERAL
+**/
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.4em;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+}
+
+/**
+*	PARTICLES
+**/
+#particules {
+  #star {
+    &.first {
+      &:after {
+        width: 1px;
+        height: 1px;
+        box-shadow: $shadows-small;
+      }
+      width: 1px;
+      height: 1px;
+      box-shadow: $shadows-small;
+      animation-duration: 50s;
+    }
+    &.second {
+      &:after {
+        width: 2px;
+        height: 2px;
+        box-shadow: $shadows-medium;
+      }
+      width: 2px;
+      height: 2px;
+      box-shadow: $shadows-medium;
+      animation-duration: 100s;
+    }
+    &.third {
+      &:after {
+        width: 4px;
+        height: 4px;
+        box-shadow: $shadows-big;
+      }
+      width: 4px;
+      height: 4px;
+      filter: blur(4.5px);
+      box-shadow: $shadows-big;
+      animation-duration: 110s;
+    }
+    &.fourth {
+      &:after {
+        width: 8px;
+        height: 8px;
+        box-shadow: $shadows-heavy;
+      }
+      width: 8px;
+      height: 8px;
+      filter: blur(12px);
+      box-shadow: $shadows-heavy;
+      animation-duration: 120s;
+    }
+
+    &:after {
+      content: " ";
+      position: absolute;
+      top: 2000px;
+      background: transparent;
+      border-radius: 50%;
+      filter: blur(0.5px);
+    }
+
+    background: transparent;
+    animation: starMouvement linear infinite;
+    border-radius: 50%;
+    filter: blur(0.5px);
+  }
+}
+
+@keyframes starMouvement {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+/**
+*	SCENE
+**/
+#scene, .layer {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+
+#scene {
+  transform: translate3d(0px, 0px, 0px);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  position: relative;
+  overflow: hidden;
+
+  li.layer {
+    div {
+      -webkit-transform: translate3d(0,0,0);
+      -moz-transform: translate3d(0,0,0);
+      transform: translate3d(0,0,0);
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .background {
+      background: url(http://redekproject.fr/share/wall.jpg) no-repeat 50% 25%;
+      position: absolute;
+      background-size: cover;
+      width: 110%;
+      bottom: -20px;
+      left: -5%;
+      top: -5%;
+    }
+
+    .logo {
+      opacity: 0.65;
+      max-width: 350px;
+      margin: 150px auto;
+      display: flex;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      animation: fadeInLogo 2s ease-in;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      @media only screen and (max-width : 768px) {
+        max-width: 300px;
+      }
+
+      @keyframes fadeInLogo {
+        from {
+          opacity: 0;
+          margin: 100px auto 200px auto;
+          filter: blur(2px);
+        }
+      }
+    }
+
+    .text {
+      opacity: 0.85;
+      display: flex;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin: 75px auto 0px auto;
+      max-width: 90%;
+      height: 100%;
+      text-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+
+      h1 {
+        font-size: 7vh;
+        text-transform: uppercase;
+        padding: 0;
+        margin-bottom: 115px;
+        font-family: $title-font, sans-serif;
+      }
+
+      p {
+        font-size: 3.5vh;
+        margin-top: 115px;
+        font-family: $p-font, cursive;
+        font-weight: bold;
+      }
+
+      @media only screen and (max-width : 768px) {
+        h1 {
+          font-size: 10vw;
+          margin-bottom: 15vw;
+        }
+
+        p {
+          font-size: 5vw;
+          margin-top: 15vw;
+        }
+      }
+    }
+  }
+}
