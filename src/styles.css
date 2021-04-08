@@ -44,4 +44,7 @@ mat-toolbar {
   .mat-icon-button.mat-button-base.mat-warn:hover {
     background: #333b480a; }
 
+button:focus {
+  outline: none; }
+
 /*# sourceMappingURL=styles.css.map */

@@ -9,12 +9,41 @@
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
                [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
-    </mat-nav-list>
+    <div class="sidenav__content">
+      <button style="margin-top: 6px;" _ngcontent-tnm-c132="" mat-icon-button="" color="warn" aria-label="Example icon button with a heart icon"
+              class="ml-none mat-focus-indicator mat-icon-button mat-button-base mat-warn"><span class="mat-button-wrapper"><img
+        id="homeLogo" src="assets/images/dibodev-developpeur-rennes-blue.png" alt="Logo dibodev développeur web à rennes"></span><span
+        matripple=""
+        class="mat-ripple mat-button-ripple mat-button-ripple-round"></span><span
+        class="mat-button-focus-overlay"></span></button>
+      <mat-nav-list id="mobile__list">
+        <a _ngcontent-ums-c44="" mat-button=""
+           class="tab__sm mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
+           aria-disabled="false"><span class="mat-button-wrapper"><span
+          class="material-icons-round">question_answer</span> À propos</span><span matripple=""
+                                                                                   class="mat-ripple mat-button-ripple"></span><span
+          class="mat-button-focus-overlay"></span></a>
+        <a _ngcontent-ums-c44="" mat-button=""
+           class="tab__sm mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
+           aria-disabled="false"><span class="mat-button-wrapper"><span class="material-icons-round">history_edu</span> Portfolio</span><span
+          matripple=""
+          class="mat-ripple mat-button-ripple"></span><span
+          class="mat-button-focus-overlay"></span></a>
+        <a _ngcontent-ums-c44="" mat-button=""
+           class="tab__sm mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
+           aria-disabled="false"><span class="mat-button-wrapper"><span class="material-icons-round">bar_chart</span> Compétences</span><span
+          matripple=""
+          class="mat-ripple mat-button-ripple"></span><span
+          class="mat-button-focus-overlay"></span></a>
+        <a _ngcontent-ums-c44="" mat-button=""
+           class="tab__sm mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
+           aria-disabled="false"><span class="mat-button-wrapper"><span class="material-icons-round">mail</span> Me contacter</span><span
+          matripple=""
+          class="mat-ripple mat-button-ripple"></span><span
+          class="mat-button-focus-overlay"></span></a>
+      </mat-nav-list>
+    </div>
+
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar>
@@ -26,37 +55,46 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <button  _ngcontent-tnm-c132="" mat-icon-button="" color="warn" aria-label="Example icon button with a heart icon"
-              class="mat-focus-indicator mat-icon-button mat-button-base mat-warn"><span class="mat-button-wrapper"><img id="homeLogo" src="assets/images/dibodev-developpeur-rennes-blue.png" alt="Logo dibodev développeur web à rennes"></span><span matripple=""
-                                                                                     class="mat-ripple mat-button-ripple mat-button-ripple-round"></span><span
-        class="mat-button-focus-overlay"></span></button>
+      <div class="nav__ctn">
+        <button _ngcontent-tnm-c132="" mat-icon-button="" color="warn" aria-label="Example icon button with a heart icon"
+                class="mat-focus-indicator mat-icon-button mat-button-base mat-warn"><span class="mat-button-wrapper"><img
+          id="homeLogo" src="assets/images/dibodev-developpeur-rennes-blue.png"
+          alt="Logo dibodev développeur web à rennes"></span><span matripple=""
+                                                                   class="mat-ripple mat-button-ripple mat-button-ripple-round"></span><span
+          class="mat-button-focus-overlay"></span></button>
+
+      </div>
       <span class="spacer"></span>
 
+      <div class="nav__menu--lg">
 
-      <a _ngcontent-ums-c44="" mat-button=""
-         class="mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
-         aria-disabled="false"><span class="mat-button-wrapper"><span
-        class="material-icons-round">question_answer</span> À propos</span><span matripple=""
-                                                                                 class="mat-ripple mat-button-ripple"></span><span
-        class="mat-button-focus-overlay"></span></a>
-      <a _ngcontent-ums-c44="" mat-button=""
-         class="mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
-         aria-disabled="false"><span class="mat-button-wrapper"><span class="material-icons-round">history_edu</span> Portfolio</span><span
-        matripple=""
-        class="mat-ripple mat-button-ripple"></span><span
-        class="mat-button-focus-overlay"></span></a>
-      <a _ngcontent-ums-c44="" mat-button=""
-         class="mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
-         aria-disabled="false"><span class="mat-button-wrapper"><span class="material-icons-round">bar_chart</span> Compétences</span><span
-        matripple=""
-        class="mat-ripple mat-button-ripple"></span><span
-        class="mat-button-focus-overlay"></span></a>
-      <a _ngcontent-ums-c44="" mat-button=""
-         class="mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
-         aria-disabled="false"><span class="mat-button-wrapper"><span class="material-icons-round">mail</span> Me contacter</span><span
-        matripple=""
-        class="mat-ripple mat-button-ripple"></span><span
-        class="mat-button-focus-overlay"></span></a>
+        <a _ngcontent-ums-c44="" mat-button=""
+           class="mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
+           aria-disabled="false"><span class="mat-button-wrapper"><span
+          class="material-icons-round">question_answer</span> À propos</span><span matripple=""
+                                                                                   class="mat-ripple mat-button-ripple"></span><span
+          class="mat-button-focus-overlay"></span></a>
+        <a _ngcontent-ums-c44="" mat-button=""
+           class="mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
+           aria-disabled="false"><span class="mat-button-wrapper"><span class="material-icons-round">history_edu</span> Portfolio</span><span
+          matripple=""
+          class="mat-ripple mat-button-ripple"></span><span
+          class="mat-button-focus-overlay"></span></a>
+        <a _ngcontent-ums-c44="" mat-button=""
+           class="mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
+           aria-disabled="false"><span class="mat-button-wrapper"><span class="material-icons-round">bar_chart</span> Compétences</span><span
+          matripple=""
+          class="mat-ripple mat-button-ripple"></span><span
+          class="mat-button-focus-overlay"></span></a>
+        <a _ngcontent-ums-c44="" mat-button=""
+           class="mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
+           aria-disabled="false"><span class="mat-button-wrapper"><span class="material-icons-round">mail</span> Me contacter</span><span
+          matripple=""
+          class="mat-ripple mat-button-ripple"></span><span
+          class="mat-button-focus-overlay"></span></a>
+      </div>
+
+
     </mat-toolbar>
     <ng-content></ng-content>
     <!-- Add Content Here -->
