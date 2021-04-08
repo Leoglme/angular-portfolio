@@ -152,7 +152,7 @@ body {
     }
 
     .background {
-      background: url(http://redekproject.fr/share/wall.jpg) no-repeat 50% 25%;
+      background: url(../../assets/images/landing-page-background-hd.jpg) no-repeat 50% 25%;
       position: absolute;
       background-size: cover;
       width: 110%;
@@ -195,6 +195,7 @@ body {
       align-content: center;
       align-items: center;
       justify-content: center;
+      justify-content: center;
       flex-direction: column;
       margin: 75px auto 0px auto;
       max-width: 90%;
@@ -229,4 +230,10 @@ body {
       }
     }
   }
+}
+
+.text{
+    color: #fff;
+    bottom: 13vh;
+    position: relative;
 }
