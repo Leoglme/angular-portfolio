@@ -32,6 +32,20 @@ mat-toolbar {
   box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
 }
 
+mat-sidenav{
+  width: 70% !important;
+}
+
+
+#mobile__list{
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 30px;
+}
+
 mat-toolbar a{
   color: #333b48;;
   display: inline-block;
@@ -42,5 +56,55 @@ mat-toolbar a{
 
 .material-icons-round{
   color: #d3334d;
+}
+
+.tab__sm{
+  width: 100%;
+  font-size: 16px;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  text-align: inherit;
+}
+.sidenav__content{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+  .nav__menu--lg{
+    display: none;
+  }
+  .mat-icon-button.mat-button-base.mat-warn{
+    margin-left: 0 !important;
+  }
+  .mat-drawer-inner-container{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .material-icons-round{
+    margin-right: 16px;
+  }
+
+  .nav__ctn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.ml-none{
+  margin-left: 0 !important;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .nav__ctn{
+    margin-right: 40px;
+  }
 }
 
