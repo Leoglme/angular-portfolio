@@ -11,30 +11,47 @@ export class CardsComponent implements OnInit {
     {
       language: 'angular',
       imageUrl: 'angular-logo.png',
+      btnDisable: ''
     },
     {
       language: 'react',
       imageUrl: 'react-logo.png',
+      btnDisable: ''
     },
     {
       language: 'jquery',
       imageUrl: 'jquery-logo-2.png',
+      btnDisable: ''
     },
     {
       language: 'html | Css',
-      imageUrl: 'html-css-logo.jpg',
+      imageUrl: 'html-css-logo.png',
+      btnDisable: ''
     },
     {
       language: 'javascript',
-      imageUrl: 'javascript-logo.jpg',
+      imageUrl: 'javascript-logo.png',
+      btnDisable: ''
     },
     {
       language: 'php',
       imageUrl: 'logo-php.png',
+      btnDisable: ''
     },
     {
       language: 'wordpress',
       imageUrl: 'logo-wordpress.png',
+      btnDisable: ''
+    },
+    {
+      language: 'photoshop',
+      imageUrl: 'photoshop.png',
+      btnDisable: 'true'
+    },
+    {
+      language: 'unreal engine',
+      imageUrl: 'logo-unreal-engine.png',
+      btnDisable: ''
     },
 ];
 

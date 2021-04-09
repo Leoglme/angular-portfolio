@@ -44,3 +44,8 @@ mdb-card-title{
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.card-title, .mask{
+  user-select: none;
+}
+

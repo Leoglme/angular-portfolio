@@ -35,4 +35,7 @@ mdb-card-title {
   justify-content: center;
   flex-wrap: wrap; }
 
+.card-title, .mask {
+  user-select: none; }
+
 /*# sourceMappingURL=cards.component.css.map */

@@ -29,6 +29,11 @@
   line-height: 3em;
   padding-left: 0.25em;
   color: rgba(0, 0, 0, 0.4);
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  text-align: center; }
+
+@media screen and (max-width: 600px) {
+  .two h1 span {
+    margin: 0 16px; } }
 
 /*# sourceMappingURL=skills.component.css.map */

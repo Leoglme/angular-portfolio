@@ -15,7 +15,7 @@
         <h4 class="skills__title">{{skill.language}}</h4>
       </mdb-card-title>
 
-      <a href="#" mdbBtn class="skills__btn" color="primary" mdbWavesEffect>Voir projets</a>
+      <a href="#" mdbBtn class="skills__btn{{skill.btnDisable === 'true' ? ' disabled ' : ''}}" color="primary" mdbWavesEffect>Voir projets</a>
     </mdb-card-body>
   </mdb-card>
 </div>

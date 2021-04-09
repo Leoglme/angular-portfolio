@@ -1,7 +1,7 @@
 // SCENE
 window.onload = function(){
   $('li.layer .text .sub-title').typed({
-    strings: ["Fullstack Developer and Graphic Artist ^1500 ", "We're currently working on our full site ^1500"],
+    strings: ["Bonjour je m'appelle Léo, étudiant à Epitech ^1500 ", "Développeur web junior à Rennes ^1500"],
     loop: true,
     contentType: 'html',
     showCursor: false
