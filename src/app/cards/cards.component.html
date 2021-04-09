@@ -1,11 +1,9 @@
-
-
-<div>
-  <!-- Card -->
-  <mdb-card >
+<!-- Card -->
+<div class="skills__category">
+  <mdb-card class="skills-card" *ngFor="let skill of skills">
     <div class="view rgba-white-slight waves-light" mdbWavesEffect>
       <!-- Card img -->
-      <mdb-card-img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap"></mdb-card-img>
+      <mdb-card-img src="assets/images/{{skill.imageUrl}}" alt="Card image cap"></mdb-card-img>
       <a>
         <div class="mask"></div>
       </a>
@@ -14,10 +12,10 @@
     <mdb-card-body>
       <!--Title-->
       <mdb-card-title>
-        <h4>Angular</h4>
+        <h4 class="skills__title">{{skill.language}}</h4>
       </mdb-card-title>
 
-      <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
+      <a href="#" mdbBtn class="skills__btn" color="primary" mdbWavesEffect>Voir projets</a>
     </mdb-card-body>
   </mdb-card>
 </div>

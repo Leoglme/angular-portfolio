@@ -27,7 +27,6 @@ export class MainNavComponent implements OnInit{
   ngOnInit(): void {
     this.getDisplaySize();
     this.responsiveNavbar();
-    console.log(this.isMobile);
   }
   getDisplaySize(): void {
     this.innerWidth = window.innerWidth;

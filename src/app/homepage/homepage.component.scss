@@ -132,6 +132,7 @@ body {
 }
 
 #scene {
+  height: 93.15vh;
   transform: translate3d(0px, 0px, 0px);
   transform-style: preserve-3d;
   backface-visibility: hidden;
@@ -153,6 +154,7 @@ body {
 
     .background {
       background: url(../../assets/images/landing-page-background-hd.jpg) no-repeat 50% 25%;
+      /* https://i.pinimg.com/originals/aa/9b/db/aa9bdb91059dd9b361ee984d443eb595.png*/
       position: absolute;
       background-size: cover;
       width: 110%;

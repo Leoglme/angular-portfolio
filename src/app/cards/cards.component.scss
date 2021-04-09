@@ -8,3 +8,39 @@
 .btn-primary:not([disabled]):not(.disabled).active, .btn-primary:not([disabled]):not(.disabled):active, .show > .btn-primary.dropdown-toggle{
   background-color: #c30f2d  !important;
 }
+
+.skills-card{
+  display: flex;
+  flex-direction: row;
+}
+.skills__title{
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 20px;
+}
+
+.skills__btn{
+  width: 115px;
+  padding: 8px 0;
+}
+
+mdb-card-title{
+  margin-bottom: 0;
+}
+
+.card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.view{
+  display: flex;
+  align-items: center;
+}
+
+.skills__category{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
