@@ -1,7 +1,7 @@
 <!-- Card -->
 <div class="skills__category">
-  <mdb-card class="skills-card" *ngFor="let skill of skills">
-    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+  <mdb-card class="view skills-card"   *ngFor="let skill of skills" mdbWavesEffect>
+    <div>
       <!-- Card img -->
       <mdb-card-img src="assets/images/{{skill.imageUrl}}" alt="Card image cap"></mdb-card-img>
       <a>
@@ -13,9 +13,13 @@
       <!--Title-->
       <mdb-card-title>
         <h4 class="skills__title">{{skill.language}}</h4>
-      </mdb-card-title>
 
-      <a href="#" mdbBtn class="skills__btn{{skill.btnDisable === 'true' ? ' disabled ' : ''}}" color="primary" mdbWavesEffect>Voir projets</a>
+      </mdb-card-title>
+      <div class="stars-outer">
+        <div class="stars-inner" [ngStyle]="{'width': skill.rating}"></div>
+      </div>
+
+      <a href="#" mdbBtn class="skills__btn{{skill.btnDisable === 'true' ? ' disabled ' : ''}}" color="primary">Voir projets</a>
     </mdb-card-body>
   </mdb-card>
 </div>
