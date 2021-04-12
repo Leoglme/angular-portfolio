@@ -1,3 +1,6 @@
-
+app-portfolio-card {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
 
 /*# sourceMappingURL=work.component.css.map */

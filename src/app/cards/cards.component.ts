@@ -51,6 +51,12 @@ export class CardsComponent implements OnInit {
       rating: 4,
     },
     {
+      language: 'saas | scss',
+      imageUrl: 'scss-logo.png',
+      btnDisable: '',
+      rating: 5,
+    },
+    {
       language: 'photoshop',
       imageUrl: 'photoshop.png',
       btnDisable: 'true',

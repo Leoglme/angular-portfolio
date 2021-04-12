@@ -1,10 +1,32 @@
-#skills {
-  height: 90vh;
+@charset "UTF-8";
+section {
   width: 100%;
   display: flex;
   flex-wrap: wrap; }
 
-app-skills {
+#compétences {
+  margin-bottom: 10vh; }
+
+app-skills, app-work, app-homepage {
   width: 100%; }
+
+app-work {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.divider {
+  height: 12px;
+  position: relative;
+  width: 100%;
+  background: radial-gradient(ellipse farthest-side at top center, rgba(0, 0, 0, 0.05), transparent); }
+  .divider:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 3px; }
 
 /*# sourceMappingURL=app.component.css.map */

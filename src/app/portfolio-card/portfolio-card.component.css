@@ -1,0 +1,41 @@
+.work__card {
+  max-width: 236px;
+  height: 236px;
+  border-radius: 16px; }
+  .work__card .view {
+    border-radius: 16px; }
+.work__mask {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.42); }
+  .work__mask:hover {
+    opacity: 1; }
+
+.text__mask, .work__mask--footer {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  pointer-events: none !important;
+  font-weight: 700;
+  color: #f5f5f5; }
+
+.text__mask {
+  margin-bottom: 0;
+  margin-top: 32px;
+  font-size: 32px;
+  text-transform: capitalize; }
+
+.work__mask--footer {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin: 0 0 16px 16px;
+  top: 75px;
+  position: relative;
+  width: 100%; }
+  .work__mask--footer .material-icons-outlined {
+    font-size: 14px;
+    margin-right: 2px; }
+
+/*# sourceMappingURL=portfolio-card.component.css.map */
