@@ -1,0 +1,15 @@
+<!-- Card -->
+<mdb-card class="work__card" *ngFor="let project of projects">
+  <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+    <!-- Card img -->
+    <mdb-card-img src="{{'assets/images/' + project.imageUrl}}"
+                  alt="Card image cap"></mdb-card-img>
+    <a>
+      <div class="work__mask mask">
+          <p class="text__mask">Ouvrir</p>
+          <span class="work__mask--footer"><span class="material-icons-outlined">north_east</span>{{project.websiteUrl}}</span>
+      </div>
+    </a>
+  </div>
+</mdb-card>
+<!-- Card -->
