@@ -20,6 +20,7 @@ import { WorkComponent } from './work/work.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { PortfolioCardComponent } from './portfolio-card/portfolio-card.component';
+import { LoadingComponent } from './loading/loading.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { PortfolioCardComponent } from './portfolio-card/portfolio-card.componen
     WorkComponent,
     AboutComponent,
     ContactComponent,
-    PortfolioCardComponent
+    PortfolioCardComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,7 @@ import { PortfolioCardComponent } from './portfolio-card/portfolio-card.componen
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

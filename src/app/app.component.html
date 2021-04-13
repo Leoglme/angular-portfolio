@@ -1,4 +1,5 @@
-<app-main-nav>
+<app-loading></app-loading>
+<app-main-nav id="#app" style="visibility:hidden">
   <div class="responsive__container scrollspy-example" data-mdb-spy="scroll"
        data-mdb-target="#scrollspy1"
        data-mdb-offset="0">
@@ -11,4 +12,7 @@
       <app-work></app-work>
     </section>
   </div>
+
+  <router-outlet></router-outlet>
 </app-main-nav>
+

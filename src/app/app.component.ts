@@ -1,7 +1,4 @@
-import { Component} from '@angular/core';
-
-
-
+import { Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +6,8 @@ import { Component} from '@angular/core';
 })
 export class AppComponent{
   title = 'portfolio';
+  posts: any;
 
-  constructor() {
-  }
+  constructor(
+  ) {}
 }
