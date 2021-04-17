@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-portfolio-card',
   templateUrl: './portfolio-card.component.html',
   styleUrls: ['./portfolio-card.component.scss']
 })
-export class PortfolioCardComponent implements OnInit {
+export class PortfolioCardComponent implements OnInit, AfterViewInit {
   projects = [
     {
       name: 'myTweeter',
@@ -68,6 +68,16 @@ export class PortfolioCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.mobileHover();
+  }
+  // tslint:disable-next-line:use-lifecycle-interface
+  ngAfterViewInit(): void{
+    const allWorkCard = document.querySelectorAll('.work__card');
+    console.log(allWorkCard);
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < allWorkCard.length; i++){
+      // @ts-ignore
+      allWorkCard[i].attributes[2].nodeValue =  i * 100;
+    }
   }
   mobileHover(): void {
     if (window.matchMedia('(pointer: coarse)').matches) {

@@ -16,7 +16,7 @@
   z-index: 1;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 901px) {
   .sidenav {
     display: none;
   }
@@ -59,6 +59,7 @@ mat-toolbar a{
 }
 
 .tab__sm{
+  border-radius: unset;
   width: 100%;
   font-size: 16px;
   padding-bottom: 8px;
@@ -73,6 +74,9 @@ mat-toolbar a{
 }
 
 @media screen and (max-width: 900px) {
+  #hamburger__btn{
+    display: block !important;
+  }
   .nav__menu--lg{
     display: none;
   }
@@ -108,3 +112,6 @@ mat-toolbar a{
   }
 }
 
+#hamburger__btn mat-icon{
+  color: #d3334d;
+}

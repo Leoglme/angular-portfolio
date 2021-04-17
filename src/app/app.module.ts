@@ -18,8 +18,16 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { SkillsComponent } from './skills/skills.component';
 import { WorkComponent } from './work/work.component';
 import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
 import { PortfolioCardComponent } from './portfolio-card/portfolio-card.component';
+import { LoadingComponent } from './loading/loading.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LoginComponent } from './login/login.component';
+/*for testing forms*/
+import {ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpService } from './Services/http.service';
+import { ChatBotComponent } from './chat-bot/chat-bot.component';
+import { ButtonSendComponent } from './button-send/button-send.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,8 +37,13 @@ import { PortfolioCardComponent } from './portfolio-card/portfolio-card.componen
     SkillsComponent,
     WorkComponent,
     AboutComponent,
-    ContactComponent,
-    PortfolioCardComponent
+    PortfolioCardComponent,
+    LoadingComponent,
+    AppComponent,
+    PageNotFoundComponent,
+    LoginComponent,
+    ChatBotComponent,
+    ButtonSendComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,9 +56,9 @@ import { PortfolioCardComponent } from './portfolio-card/portfolio-card.componen
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule, ReactiveFormsModule, HttpClientModule,
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

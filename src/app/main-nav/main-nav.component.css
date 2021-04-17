@@ -12,7 +12,7 @@
   top: 0;
   z-index: 1; }
 
-@media (min-width: 768px) {
+@media (min-width: 901px) {
   .sidenav {
     display: none; } }
 .spacer {
@@ -45,6 +45,7 @@ mat-toolbar a {
   color: #d3334d; }
 
 .tab__sm {
+  border-radius: unset;
   width: 100%;
   font-size: 16px;
   padding-bottom: 8px;
@@ -58,6 +59,9 @@ mat-toolbar a {
   align-items: center; }
 
 @media screen and (max-width: 900px) {
+  #hamburger__btn {
+    display: block !important; }
+
   .nav__menu--lg {
     display: none; }
 
@@ -82,5 +86,7 @@ mat-toolbar a {
 @media screen and (max-width: 600px) {
   .nav__ctn {
     margin-right: 40px; } }
+#hamburger__btn mat-icon {
+  color: #d3334d; }
 
 /*# sourceMappingURL=main-nav.component.css.map */

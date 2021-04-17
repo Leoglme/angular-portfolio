@@ -1,0 +1,17 @@
+.dinamic{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2em;
+}
+
+#contact__form{
+  display: flex;
+  justify-content: center;
+}
+
+.contact__card{
+  transform: translate(0, -35%);
+  padding: 40px;
+  width: 45rem;
+  max-width: unset;
+}

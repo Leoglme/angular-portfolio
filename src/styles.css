@@ -84,5 +84,11 @@ button:focus {
 @media screen and (max-width: 600px) {
   .two h1 span {
     margin: 0 16px; } }
+.mat-button-focus-overlay {
+  background-color: transparent !important; }
+
+@media (min-width: 901px) {
+  .mat-drawer-backdrop.mat-drawer-shown {
+    display: none; } }
 
 /*# sourceMappingURL=styles.css.map */

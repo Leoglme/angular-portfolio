@@ -92,4 +92,12 @@ button:focus {
     margin: 0 16px;
   }
 }
+.mat-button-focus-overlay {
+  background-color: transparent!important;
+}
+@media (min-width: 901px) {
+  .mat-drawer-backdrop.mat-drawer-shown {
+    display: none;
+  }
+}
 

@@ -1,0 +1,41 @@
+<form id="contact__form" (submit)="register($event)">
+  <mdb-card class="contact__card">
+    <h1>Material Form</h1>
+
+
+
+    <div style="width: 100%;">
+      <div class="md-form">
+        <input mdbInput type="text" id="form1" class="form-control" [formControl]="nameFormControl">
+        <label for="form1" class="">Name</label>
+
+      <mdb-error *ngIf="nameFormControl.hasError('minlength')">
+        Name must be at least 4 characters long.
+      </mdb-error>
+      <mdb-error *ngIf="nameFormControl.hasError('required')">
+        Name is <strong>required</strong>
+      </mdb-error>
+      </div>
+    </div>
+
+    <div style="width: 100%">
+      <div class="md-form">
+        <input mdbInput type="email" id="form2" class="form-control" [formControl]="emailFormControl">
+        <label for="form2" class="">Email</label>
+      <mdb-error *ngIf="emailFormControl.hasError('email')">
+        Please enter a valid email address
+      </mdb-error>
+      <mdb-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mdb-error>
+      </div>
+    </div>
+
+    <button
+      mat-raised-button
+      [disabled]="emailFormControl.invalid || nameFormControl.invalid || loading"
+      color="primary">
+      {{buttonText}}
+    </button>
+  </mdb-card>
+</form>
