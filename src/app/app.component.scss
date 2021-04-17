@@ -8,7 +8,7 @@ section{
   margin-bottom: 10vh;
 }
 
-app-skills, app-work, app-homepage{
+app-skills, app-work, app-homepage, app-about{
   width: 100%;
 }
 
@@ -32,4 +32,8 @@ app-work{
     left: 0;
     height: 3px;
   }
+}
+
+app-login{
+  width: 100%;
 }

@@ -1,3 +1,38 @@
+.about__container {
+  background: #333b48;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  margin-top: 100px;
+  padding-bottom: 150px; }
 
+.about__avatar {
+  position: absolute;
+  left: 50%;
+  max-width: 180px;
+  transform: translate(-50%, -50%);
+  transition: all .15s ease;
+  cursor: pointer; }
+  .about__avatar:hover {
+    transform: translate(-50%, -45%); }
+
+.about__text {
+  padding-top: 16px;
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  text-align: center; }
+  .about__text h1 {
+    font-weight: 800;
+    font-size: 32px; }
+  .about__text h2 {
+    font-size: 18px;
+    font-weight: unset; }
+
+.about__header {
+  width: 100%;
+  height: 125px; }
 
 /*# sourceMappingURL=about.component.css.map */

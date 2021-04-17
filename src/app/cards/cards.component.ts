@@ -1,12 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import * as AOS from 'aos';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.scss']
 })
-export class CardsComponent implements OnInit {
+export class CardsComponent implements OnInit, AfterViewInit {
   skills = [
     {
       language: 'angular',
@@ -78,12 +77,18 @@ export class CardsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    AOS.init();
     this.UrlExists(this.skills);
     this.rating();
   }
-
-
+  // tslint:disable-next-line:use-lifecycle-interface
+  ngAfterViewInit(): void{
+    const allSkillCard = document.querySelectorAll('.skills-card');
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < allSkillCard.length; i++){
+      // @ts-ignore
+      allSkillCard[i].attributes[3].nodeValue =  i * 100;
+    }
+  }
   // @ts-ignore
   UrlExists(obj: string | { language: string; imageUrl: string; }[]): boolean {
     const regexFileName = /^[\w,\s-]+\.*/gm;

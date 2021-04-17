@@ -4,40 +4,37 @@
     rel="stylesheet">
 </head>
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-               [ngClass]="{hidden: !(isHandset$ | async)}"
-               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-               [mode]="(isHandset$ | async) ? 'over' : 'side'"
-               [opened]="(isHandset$ | async) === false">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport style="max-width: 350px; visibility: hidden;">
     <div class="sidenav__content">
-      <button style="margin-top: 6px;" _ngcontent-tnm-c132="" mat-icon-button="" color="warn" aria-label="Example icon button with a heart icon"
-              class="ml-none mat-focus-indicator mat-icon-button mat-button-base mat-warn"><span class="mat-button-wrapper"><img
-        id="homeLogo" src="assets/images/dibodev-developpeur-rennes-blue.png" alt="Logo dibodev développeur web à rennes"></span><span
+      <button style="margin-top: 6px;" _ngcontent-tnm-c132="" mat-icon-button="" color="warn"
+              class=""><span class="mat-button-wrapper"><img
+        id="homeLogo" src="assets/images/dibodev-developpeur-rennes-blue.png"
+        alt="Logo dibodev développeur web à rennes"></span><span
         matripple=""
-        class="mat-ripple mat-button-ripple mat-button-ripple-round"></span><span
-        class="mat-button-focus-overlay"></span></button>
+        class="mat-ripple mat-button-ripple mat-button-ripple-round"></span></button>
       <mat-nav-list id="mobile__list">
         <a _ngcontent-ums-c44="" mat-button=""
            class="tab__sm mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
-           aria-disabled="false"><span class="mat-button-wrapper"><span
+           aria-disabled="false" (click)="scrollToElement('about-us'); drawer.toggle()"><span class="mat-button-wrapper"><span
           class="material-icons-round">question_answer</span> À propos</span><span matripple=""
                                                                                    class="mat-ripple mat-button-ripple"></span><span
           class="mat-button-focus-overlay"></span></a>
         <a _ngcontent-ums-c44="" mat-button=""
            class="tab__sm mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
-           aria-disabled="false"><span class="mat-button-wrapper"><span class="material-icons-round">history_edu</span> Portfolio</span><span
+           aria-disabled="false" (click)="scrollToElement('projets'); drawer.toggle()"><span class="mat-button-wrapper"><span class="material-icons-round">history_edu</span> Portfolio</span><span
           matripple=""
           class="mat-ripple mat-button-ripple"></span><span
           class="mat-button-focus-overlay"></span></a>
         <a _ngcontent-ums-c44="" mat-button=""
            class="tab__sm mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
-           aria-disabled="false"><span class="mat-button-wrapper"><span class="material-icons-round">bar_chart</span> Compétences</span><span
+           aria-disabled="false" (click)="scrollToElement('competences'); drawer.toggle()"><span class="mat-button-wrapper"><span class="material-icons-round">bar_chart</span> Compétences</span><span
           matripple=""
           class="mat-ripple mat-button-ripple"></span><span
           class="mat-button-focus-overlay"></span></a>
         <a _ngcontent-ums-c44="" mat-button=""
            class="tab__sm mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
-           aria-disabled="false"><span class="mat-button-wrapper"><span class="material-icons-round">mail</span> Me contacter</span><span
+           aria-disabled="false" (click)="scrollToElement('contact'); drawer.toggle()"><span class="mat-button-wrapper"><span
+          class="material-icons-round">mail</span> Me contacter</span><span
           matripple=""
           class="mat-ripple mat-button-ripple"></span><span
           class="mat-button-focus-overlay"></span></a>
@@ -47,17 +44,18 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar>
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+      <button style="display: none" id="hamburger__btn"
+              type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              (click)="drawer.toggle()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <div class="nav__ctn">
-        <button _ngcontent-tnm-c132="" mat-icon-button="" color="warn" aria-label="Example icon button with a heart icon"
-                class="mat-focus-indicator mat-icon-button mat-button-base mat-warn"><span class="mat-button-wrapper"><img
+        <button _ngcontent-tnm-c132="" mat-icon-button="" color="warn"
+                aria-label="Example icon button with a heart icon"
+                class="mat-focus-indicator mat-icon-button mat-button-base mat-warn"><span
+          class="mat-button-wrapper"><img
           id="homeLogo" src="assets/images/dibodev-developpeur-rennes-blue.png"
           alt="Logo dibodev développeur web à rennes"></span><span matripple=""
                                                                    class="mat-ripple mat-button-ripple mat-button-ripple-round"></span><span
@@ -67,38 +65,43 @@
       <span class="spacer"></span>
 
       <div class="nav__menu--lg" id="scrollspy1">
-        <a mat-button routerLink="/work">Teams</a>
-
         <a _ngcontent-ums-c44="" mat-button=""
-           class="mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
-           aria-disabled="false"><span class="mat-button-wrapper"><span
+           class="nav-link active mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted"
+           tabindex="0"
+           aria-disabled="false" (click)="scrollToElement('about-us')"><span class="mat-button-wrapper"><span
           class="material-icons-round">question_answer</span> À propos</span><span matripple=""
                                                                                    class="mat-ripple mat-button-ripple"></span><span
           class="mat-button-focus-overlay"></span></a>
         <a _ngcontent-ums-c44="" mat-button=""
-           class="mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
-           aria-disabled="false"><span class="mat-button-wrapper"><span class="material-icons-round">history_edu</span> Portfolio</span><span
+           class="nav-link mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted"
+           tabindex="0"
+           aria-disabled="false" (click)="scrollToElement('projets')"><span class="mat-button-wrapper"><span
+          class="material-icons-round">history_edu</span> Portfolio</span><span
+          matripple=""
+          class="mat-ripple mat-button-ripple"></span><span
+          class="mat-button-focus-overlay"></span></a>
+        <a offset="30" _ngcontent-ums-c44="" mat-button=""
+           class="nav-link mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted"
+           tabindex="0"
+           aria-disabled="false" (click)="scrollToElement('competences')"><span class="mat-button-wrapper"><span
+          class="material-icons-round">bar_chart</span> Compétences</span><span
           matripple=""
           class="mat-ripple mat-button-ripple"></span><span
           class="mat-button-focus-overlay"></span></a>
         <a _ngcontent-ums-c44="" mat-button=""
-           class="mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
-           aria-disabled="false"  href="#compétences"><span class="mat-button-wrapper"><span class="material-icons-round">bar_chart</span> Compétences</span><span
-          matripple=""
-          class="mat-ripple mat-button-ripple"></span><span
-          class="mat-button-focus-overlay"></span></a>
-        <a _ngcontent-ums-c44="" mat-button=""
-           class="mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
-           aria-disabled="false"><span class="mat-button-wrapper"><span class="material-icons-round">mail</span> Me contacter</span><span
+           class="nav-link mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted"
+           tabindex="0"
+           aria-disabled="false" (click)="scrollToElement('contact')"><span class="mat-button-wrapper"><span
+          class="material-icons-round">mail</span> Me contacter</span><span
           matripple=""
           class="mat-ripple mat-button-ripple"></span><span
           class="mat-button-focus-overlay"></span></a>
       </div>
-
-
     </mat-toolbar>
     <router-outlet></router-outlet>
     <ng-content></ng-content>
     <!-- Add Content Here -->
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+

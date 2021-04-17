@@ -16,7 +16,10 @@ export class LoadingComponent implements OnInit {
     // imitation of new page loading
       const body = document.getElementsByTagName('body')[0];
       const app = document.getElementById('#app');
-      loader(10);
+      window.addEventListener("load", () => {
+        loader(10);
+      });
+
 
       function loader(delay: number): void {
         setTimeout(() => {

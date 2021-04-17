@@ -7,7 +7,7 @@ section {
 #compétences {
   margin-bottom: 10vh; }
 
-app-skills, app-work, app-homepage {
+app-skills, app-work, app-homepage, app-about {
   width: 100%; }
 
 app-work {
@@ -28,5 +28,8 @@ app-work {
     right: 0;
     left: 0;
     height: 3px; }
+
+app-login {
+  width: 100%; }
 
 /*# sourceMappingURL=app.component.css.map */
