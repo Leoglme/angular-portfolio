@@ -29,6 +29,7 @@ import { HttpService } from './Services/http.service';
 import { ChatBotComponent } from './chat-bot/chat-bot.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { HomeComponent } from './home/home.component';
+import { WorkDetailsComponent } from './work-details/work-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +47,7 @@ import { HomeComponent } from './home/home.component';
     ChatBotComponent,
     CategoriesComponent,
     HomeComponent,
+    WorkDetailsComponent,
   ],
   imports: [
     BrowserModule,

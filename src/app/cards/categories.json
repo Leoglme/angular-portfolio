@@ -1,0 +1,68 @@
+[
+  {
+    "name": "myTweeter",
+    "imageUrl": "my-twitter.png",
+    "websiteUrl": "tweeter.dibodev.com",
+    "languages": ["php", "jquery", "html/css", "sass/scss", "javascript"]
+  },
+  {
+    "name": "myMeetic",
+    "imageUrl": "my-meetic.png",
+    "websiteUrl": "my-meetic.dibodev.com",
+    "languages": ["php", "jquery", "html/css", "javascript"]
+  },
+  {
+    "name": "myCinéma",
+    "imageUrl": "my-cinema.png",
+    "websiteUrl": "my-cinema.dibodev.com",
+    "languages": ["php", "jquery", "html/css", "javascript"]
+  },
+  {
+    "name": "mySpotify",
+    "imageUrl": "my-spotify.png",
+    "websiteUrl": "my-spotify.dibodev.com",
+    "languages": ["react", "sass/scss", "php"]
+  },
+  {
+    "name": "puissance4",
+    "imageUrl": "puissance4.png",
+    "websiteUrl": "puissance4.dibodev.com",
+    "languages": ["jquery", "html/css", "javascript"]
+  },
+  {
+    "name": "snake",
+    "imageUrl": "snake-game.png",
+    "websiteUrl": "jeuduserpent.dibodev.com",
+    "languages": ["javascript"]
+  },
+  {
+    "name": "battleship",
+    "imageUrl": "battleship.png",
+    "websiteUrl": "battleship.dibodev.com",
+    "languages": ["javascript"]
+  },
+  {
+    "name": "burger-code",
+    "imageUrl": "burger-code.png",
+    "websiteUrl": "burger-code.dibodev.com",
+    "languages": ["php", "jquery", "html/css"]
+  },
+  {
+    "name": "portfolio",
+    "imageUrl": "dibodev.png",
+    "websiteUrl": "dibodev.com",
+    "languages": ["angular", "expressjs", "nodejs", "sass/scss"]
+  },
+  {
+    "name": "wild-circus",
+    "imageUrl": "wild-circus.png",
+    "websiteUrl": "wild-circus.dibodev.com",
+    "languages": ["html/css", "jquery", "javascript"]
+  },
+  {
+    "name": "travelagency",
+    "imageUrl": "travel-agency.png",
+    "websiteUrl": "travelagency.dibodev.com",
+    "languages": ["html/css"]
+  }
+]

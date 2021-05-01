@@ -1,5 +1,5 @@
 <!-- Card -->
-<mdb-card class="work__card" *ngFor="let project of projects"  data-aos="zoom-in" data-aos-delay="300">
+<mdb-card class="work__card" *ngFor="let project of projects" [routerLink]="project.route"  data-aos="zoom-in" data-aos-delay="300">
   <div class="view rgba-white-slight waves-light" mdbWavesEffect>
     <!-- Card img -->
     <mdb-card-img src="{{'assets/images/' + project.imageUrl}}"
