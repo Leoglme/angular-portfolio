@@ -1,6 +1,8 @@
 <!-- Card -->
 <div class="skills__category">
-  <mdb-card class="view skills-card" *ngFor="let skill of skills;" mdbWavesEffect data-aos="fade-down-left"
+  <mdb-card class="view skills-card" *ngFor="let skill of skills;"
+            routerLink="projets/{{skill.route}}"
+            mdbWavesEffect data-aos="fade-down-left"
             data-aos-delay="300">
     <div>
       <!-- Card img -->
@@ -20,7 +22,7 @@
         <div class="stars-inner" [ngStyle]="{'width': skill.rating}"></div>
       </div>
 
-      <a href="#" mdbBtn class="skills__btn{{skill.btnDisable === 'true' ? ' disabled ' : ''}}" color="primary">Voir projets</a>
+      <a href="projets/{{skill.route}}" mdbBtn class="skills__btn{{skill.btnDisable === 'true' ? ' disabled ' : ''}}" color="primary">Voir projets</a>
     </mdb-card-body>
   </mdb-card>
 </div>

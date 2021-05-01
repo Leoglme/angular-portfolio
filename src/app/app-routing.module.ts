@@ -1,19 +1,17 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {WorkComponent} from './work/work.component';
-import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import {AppComponent} from './app.component';
-import {LoginComponent} from './login/login.component';
-
-
+import {environment} from '../environments/environment';
+import {HomeComponent} from './home/home.component';
+import {CategoriesComponent} from './categories/categories.component';
 const routes: Routes = [
   {
     path: 'work',
     component: WorkComponent,
   },
-  { path: "login", component: LoginComponent},
-  // {path: '**', redirectTo: '/404'},
-  // {path: '404', component: PageNotFoundComponent},
+  { path: 'projets/:name', component: CategoriesComponent},
+  { path: 'projets/:name/:sndName', component: CategoriesComponent},
+  { path: '', component: HomeComponent},
 ];
 
 @NgModule({
@@ -21,4 +19,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
+  constructor(){
+  }
 }

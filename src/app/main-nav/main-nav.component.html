@@ -6,7 +6,7 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport style="max-width: 350px; visibility: hidden;">
     <div class="sidenav__content">
-      <button style="margin-top: 6px;" _ngcontent-tnm-c132="" mat-icon-button="" color="warn"
+      <button (click)="backHome()" style="margin-top: 6px;" _ngcontent-tnm-c132="" mat-icon-button="" color="warn"
               class=""><span class="mat-button-wrapper"><img
         id="homeLogo" src="assets/images/dibodev-developpeur-rennes-blue.png"
         alt="Logo dibodev développeur web à rennes"></span><span
@@ -52,7 +52,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <div class="nav__ctn">
-        <button _ngcontent-tnm-c132="" mat-icon-button="" color="warn"
+        <button (click)="backHome()" _ngcontent-tnm-c132="" mat-icon-button="" color="warn"
                 aria-label="Example icon button with a heart icon"
                 class="mat-focus-indicator mat-icon-button mat-button-base mat-warn"><span
           class="mat-button-wrapper"><img

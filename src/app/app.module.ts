@@ -27,7 +27,8 @@ import {ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from './Services/http.service';
 import { ChatBotComponent } from './chat-bot/chat-bot.component';
-import { ButtonSendComponent } from './button-send/button-send.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import { ButtonSendComponent } from './button-send/button-send.component';
     PageNotFoundComponent,
     LoginComponent,
     ChatBotComponent,
-    ButtonSendComponent,
+    CategoriesComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

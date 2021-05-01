@@ -19,35 +19,41 @@ export class LoginComponent implements OnInit {
 
   nameFormControl = new FormControl("", [
     Validators.required,
-    Validators.minLength(4)
+    Validators.minLength(3)
+  ]);
+
+  textFormControl = new FormControl("", [
+    Validators.required,
+    Validators.minLength(10),
+    Validators.maxLength(255),
   ]);
 
   constructor(public http: HttpService) {}
 
   ngOnInit() {
-    console.log("this.http.test", this.http.test);
   }
   register(e: { preventDefault: () => void; }) {
     e.preventDefault();
     this.loading = true;
-    this.buttonText = "Submiting...";
+    this.buttonText = "Envoie...";
     const user = {
       name: this.nameFormControl.value,
+      text: this.textFormControl.value,
       email: this.emailFormControl.value
     };
-    this.http.sendEmail("http://localhost:3000/sendmail", user).subscribe(
+    this.http.sendEmail("https://dibodev.herokuapp.com/sendmail", user).subscribe(
         (data: any) => {
           console.log(
-          `👏 > 👏 > 👏 > 👏 ${user.name} is successfully register and mail has been sent and the message id is ${data.messageId}`
+            `👏 > 👏 > 👏 > 👏 ${user.name} message envoyé, id => ${data.messageId}`
         );
       },
         (err: any) => {
         console.log(err);
         this.loading = false;
-        this.buttonText = "Submit";
+        this.buttonText = "Envoyé";
       }, () => {
         this.loading = false;
-        this.buttonText = "Submit";
+        this.buttonText = "Envoyé";
       }
     );
   }

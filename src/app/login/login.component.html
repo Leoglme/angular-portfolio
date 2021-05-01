@@ -31,6 +31,25 @@
       </div>
     </div>
 
+    <div style="width: 100%;">
+      <div class="md-form">
+        <textarea placeholder="Votre message..." mdbInput id="form3" class="form-control" [formControl]="textFormControl"></textarea>
+        <label for="form3" class="">Message</label>
+
+        <mdb-error *ngIf="textFormControl.hasError('minlength')">
+          Name must be at least 4 characters long.
+        </mdb-error>
+        <mdb-error *ngIf="textFormControl.hasError('required')">
+          Name is <strong>required</strong>
+        </mdb-error>
+        <mdb-error *ngIf="textFormControl.hasError('maxlength')">
+          Name must be at least 255 characters long.
+        </mdb-error>
+      </div>
+    </div>
+
+
+
     <button
       mat-raised-button
       [disabled]="emailFormControl.invalid || nameFormControl.invalid || loading"

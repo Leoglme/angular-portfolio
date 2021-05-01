@@ -1,0 +1,22 @@
+<div class="categories__components">
+  <div class="two alt-two mt-2" data-aos="zoom-in">
+    <h1>Mes projets {{currentLanguage}}
+      <span>Liens vers les pages détaillées de mes projets</span>
+    </h1>
+  </div>
+  <div class="categories__container">
+    <mdb-card class="work__card" *ngFor="let project of projects"  data-aos="zoom-in" data-aos-delay="300">
+      <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+        <!-- Card img -->
+        <mdb-card-img src="{{'assets/images/' + project.imageUrl}}"
+                      alt="Card image cap"></mdb-card-img>
+        <a>
+          <div class="work__mask mask">
+            <p class="text__mask">Ouvrir</p>
+            <span class="work__mask--footer"><span class="material-icons-outlined">north_east</span>{{project.websiteUrl}}</span>
+          </div>
+        </a>
+      </div>
+    </mdb-card>
+  </div>
+</div>
