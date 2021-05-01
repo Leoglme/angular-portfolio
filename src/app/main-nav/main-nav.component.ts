@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import {Observable} from 'rxjs';
 import {map, shareReplay} from 'rxjs/operators';
+import {environment} from '../../environments/environment';
 
 
 @Component({
@@ -13,6 +14,7 @@ export class MainNavComponent implements OnInit{
   public innerWidth: any;
   public isMobile = false;
   public isSmallScreen = false;
+  urlApp = environment.urlApp;
 
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -42,6 +44,10 @@ export class MainNavComponent implements OnInit{
     const section = document.getElementById(element);
     // @ts-ignore
     section.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
+  backHome(){
+    // @ts-ignore
+    window.location = this.urlApp;
   }
 
 }

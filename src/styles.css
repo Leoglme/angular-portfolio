@@ -90,5 +90,22 @@ button:focus {
 @media (min-width: 901px) {
   .mat-drawer-backdrop.mat-drawer-shown {
     display: none; } }
+/* width */
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background: #555; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 10px; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #cdcdcd; }
 
 /*# sourceMappingURL=styles.css.map */

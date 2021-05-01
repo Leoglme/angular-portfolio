@@ -5,7 +5,6 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root"
 })
 export class HttpService {
-  test = "How r u?";
   constructor(private http: HttpClient) {}
 
   httpGet(url: string) {
@@ -13,7 +12,7 @@ export class HttpService {
   }
 
   httpPost(url: string, {}: any) {
-    return this.http.post(url, { name: "Subpart" });
+    return this.http.post(url, { name: "dibodev" });
   }
 
   sendEmail(url: string, data: any) {
