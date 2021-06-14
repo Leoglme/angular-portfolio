@@ -24,12 +24,17 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LoginComponent } from './login/login.component';
 /*for testing forms*/
 import {ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { HttpService } from './Services/http.service';
 import { ChatBotComponent } from './chat-bot/chat-bot.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
 import { WorkDetailsComponent } from './work-details/work-details.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {InterceptorService} from './loader/interceptor.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatTooltipModule } from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +52,8 @@ import { WorkDetailsComponent } from './work-details/work-details.component';
     ChatBotComponent,
     CategoriesComponent,
     HomeComponent,
-    WorkDetailsComponent,
+    FooterComponent,
+    WorkDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -61,8 +67,13 @@ import { WorkDetailsComponent } from './work-details/work-details.component';
     MatIconModule,
     MatListModule,
     MatGridListModule, ReactiveFormsModule, HttpClientModule,
+    MatProgressBarModule, FontAwesomeModule, MatTooltipModule
   ],
-  providers: [HttpService],
+  providers: [
+    HttpService,
+    {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

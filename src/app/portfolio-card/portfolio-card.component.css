@@ -38,4 +38,9 @@
     font-size: 14px;
     margin-right: 2px; }
 
+.work__container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
+
 /*# sourceMappingURL=portfolio-card.component.css.map */

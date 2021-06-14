@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import * as AOS from 'aos';
+import {environment} from '../environments/environment';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,8 +10,9 @@ export class AppComponent implements OnInit{
   title = 'portfolio';
   posts: any;
   scrollRef = 0;
-  constructor(
-  ) {}
+  // tslint:disable-next-line:variable-name
+  constructor() {
+  }
 
   ngOnInit(): void {
     AOS.init();

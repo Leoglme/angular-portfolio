@@ -1,60 +1,85 @@
 <form id="contact__form" (submit)="register($event)">
   <mdb-card class="contact__card">
-    <h1>Material Form</h1>
-
-
-
-    <div style="width: 100%;">
-      <div class="md-form">
-        <input mdbInput type="text" id="form1" class="form-control" [formControl]="nameFormControl">
-        <label for="form1" class="">Name</label>
-
-      <mdb-error *ngIf="nameFormControl.hasError('minlength')">
-        Name must be at least 4 characters long.
-      </mdb-error>
-      <mdb-error *ngIf="nameFormControl.hasError('required')">
-        Name is <strong>required</strong>
-      </mdb-error>
+    <div class="card-body">
+      <!-- Header -->
+      <div class="form-header blue accent-1">
+        <h3 class="mt-2"><i class="fas fa-envelope"></i> Contacter moi</h3>
       </div>
-    </div>
-
-    <div style="width: 100%">
+      <!-- Body -->
       <div class="md-form">
-        <input mdbInput type="email" id="form2" class="form-control" [formControl]="emailFormControl">
-        <label for="form2" class="">Email</label>
-      <mdb-error *ngIf="emailFormControl.hasError('email')">
-        Please enter a valid email address
-      </mdb-error>
-      <mdb-error *ngIf="emailFormControl.hasError('required')">
-        Email is <strong>required</strong>
-      </mdb-error>
-      </div>
-    </div>
+        <i class="fas fa-user prefix grey-text"></i>
+        <input mdbInput type="text" id="form-name" class="form-control" autocomplete="off" [formControl]="nameFormControl">
+        <label for="form-name">Votre nom</label>
 
-    <div style="width: 100%;">
-      <div class="md-form">
-        <textarea placeholder="Votre message..." mdbInput id="form3" class="form-control" [formControl]="textFormControl"></textarea>
-        <label for="form3" class="">Message</label>
-
-        <mdb-error *ngIf="textFormControl.hasError('minlength')">
-          Name must be at least 4 characters long.
+        <mdb-error *ngIf="nameFormControl.hasError('minlength')">
+          Le nom doit comporter au moins 3 caractères.
         </mdb-error>
-        <mdb-error *ngIf="textFormControl.hasError('required')">
-          Name is <strong>required</strong>
+        <mdb-error *ngIf="nameFormControl.hasError('maxlength')">
+          Le nom doit comporter moins de 80 caractères.
         </mdb-error>
-        <mdb-error *ngIf="textFormControl.hasError('maxlength')">
-          Name must be at least 255 characters long.
+        <mdb-error *ngIf="nameFormControl.hasError('required')">
+          Votre nom est <strong>requis</strong>
+        </mdb-error>
+        <mdb-error *ngIf="nameFormControl.hasError('pattern')">
+          Caractère spéciaux non autorisé.
         </mdb-error>
       </div>
+      <div class="md-form">
+        <i class="fas fa-envelope prefix grey-text"></i>
+        <input mdbInput type="email" id="form-email" class="form-control" autocomplete="off" [formControl]="emailFormControl">
+        <label for="form-email">Votre email</label>
+        <mdb-error *ngIf="emailFormControl.hasError('email')">
+          S'il vous plaît assurez-vous de fournir un email valide.
+        </mdb-error>
+        <mdb-error *ngIf="emailFormControl.hasError('required')">
+          Votre email est <strong>requis</strong>
+        </mdb-error>
+        <mdb-error *ngIf="emailFormControl.hasError('maxlength')">
+          Votre email doit comporter moins de 120 caractères.
+        </mdb-error>
+        <mdb-error *ngIf="emailFormControl.hasError('pattern')">
+          Caractère spéciaux non autorisé.
+        </mdb-error>
+      </div>
+      <div class="md-form">
+        <i class="fas fa-pencil-alt prefix grey-text"></i>
+        <textarea style="overflow-y: hidden !important" mdbInput id="form-text" maxlength="250" class="form-control md-textarea" [formControl]="textFormControl"></textarea>
+        <label for="form-text">Votre message</label>
+
+        <mdb-error *ngIf="textFormControl.hasError('minlength')" style="transform: translateY(60%);">
+          Votre message doit comporter au moins 10 caractères.
+        </mdb-error>
+        <mdb-error *ngIf="textFormControl.hasError('required')" style="transform: translateY(60%);">
+          Votre message est <strong>requis</strong>
+        </mdb-error>
+        <mdb-error *ngIf="textFormControl.hasError('maxlength')" style="transform: translateY(60%);">
+          Votre message doit comporter moins de 250 caractères.
+        </mdb-error>
+        <mdb-error *ngIf="textFormControl.hasError('pattern')" style="transform: translateY(60%);">
+          Caractère spéciaux non autorisé.
+        </mdb-error>
+      </div>
+      <div class="center">
+        <button
+          mat-raised-button
+          [disabled]="emailFormControl.invalid || textFormControl.invalid || nameFormControl.invalid || loading"
+          class="button">
+          <span class="submit">Envoyer</span>
+          <span class="loading">
+          <div class="spinner-grow" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+            <div class="spinner-grow" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+            <div class="spinner-grow" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        </span>
+          <span class="check">Envoyé <i class="fa fa-check"></i></span>
+        </button>
+      </div>
     </div>
+  </mdb-card >
 
-
-
-    <button
-      mat-raised-button
-      [disabled]="emailFormControl.invalid || nameFormControl.invalid || loading"
-      color="primary">
-      {{buttonText}}
-    </button>
-  </mdb-card>
 </form>

@@ -1,6 +1,6 @@
 // SCENE
 if(window.location.pathname === '/'){
-  window.onload = function(){
+  $(document).ready(function() {
     $('li.layer .text .sub-title').typed({
       strings: ["Bonjour je m'appelle Léo, étudiant à Epitech ^1500 ", "Développeur web junior à Rennes ^1500"],
       loop: true,
@@ -469,6 +469,6 @@ if(window.location.pathname === '/'){
     let scene = document.getElementById('scene');
     let parallaxInstance = new Parallax(scene);
 
-  }
+  });
 }
 
