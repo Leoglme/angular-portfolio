@@ -1,28 +1,4 @@
-<!-- Card -->
-<div class="skills__category">
-  <mdb-card class="view skills-card" *ngFor="let skill of skills;"
-            routerLink="projets/{{skill.route}}"
-            mdbWavesEffect data-aos="fade-down-left"
-            data-aos-delay="300">
-    <div>
-      <!-- Card img -->
-      <mdb-card-img src="assets/images/{{skill.imageUrl}}" alt="Card image cap"></mdb-card-img>
-      <a>
-        <div class="mask"></div>
-      </a>
-    </div>
-    <!--Card content-->
-    <mdb-card-body>
-      <!--Title-->
-      <mdb-card-title>
-        <h4 class="skills__title">{{skill.language}}</h4>
-
-      </mdb-card-title>
-      <div class="stars-outer">
-        <div class="stars-inner" [ngStyle]="{'width': skill.rating}"></div>
-      </div>
-
-      <a href="projets/{{skill.route}}" mdbBtn class="skills__btn{{skill.btnDisable === 'true' ? ' disabled ' : ''}}" color="primary">Voir projets</a>
-    </mdb-card-body>
-  </mdb-card>
+<div class="slider" style="display: flex;">
+  <div class="skills__category">
+  </div>
 </div>

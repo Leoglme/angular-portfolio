@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {environment} from '../../environments/environment';
 import {CategoriesService} from '../Services/categories.service';
@@ -13,7 +13,8 @@ export class CategoriesComponent implements OnInit, AfterViewInit {
   private routeSub: Subscription | undefined;
   projects: any;
   currentLanguage = '';
-  constructor(private route: ActivatedRoute, public http: CategoriesService) {}
+  notFoundRoute = '404/page-not-found';
+  constructor(private route: ActivatedRoute, public http: CategoriesService, private router: Router) {}
 
   ngOnInit(): void {
     this.getData();
@@ -58,9 +59,12 @@ export class CategoriesComponent implements OnInit, AfterViewInit {
     this.currentLanguage = currentLanguage;
     // @ts-ignore
     this.projects = this.projects.filter(language => language.languages.includes(currentLanguage));
+    if (this.projects.length === 0){
+      this.router.navigate(['./' + this.notFoundRoute]).then(r => (''));
+    }
   }
   getData(){
-    this.http.getDataCategories("http://localhost:3000/projects").subscribe(
+    this.http.getDataCategories(environment.projectsApi).subscribe(
       (data: any) => {
         this.projects = data;
         this.filterRequest();
