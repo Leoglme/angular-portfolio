@@ -1,30 +1,30 @@
-<section style="background: #d3334d;" id="work__landing-page" class="work__section">
+<section style="{{projectColor}}" id="work__landing-page" class="work__section">
   <div class="work-landing__container">
     <div class="shapes">
       <img data-rellax-speed="2" src="assets/images/round.svg" alt="round svg" class="rellax fly__item">
       <div class="rellax fly__item fly__item--center" data-rellax-speed="-5">
-        <img src="assets/images/square.svg" alt="square svg">
+        <img class="svg__square" src="assets/images/square.svg" alt="square svg">
       </div>
       <div class="rellax fly__item fly__item--right" data-rellax-speed="-2">
-        <img src="assets/images/triangle.svg" alt="triangle svg">
+        <img class="svg__triangle" src="assets/images/triangle.svg" alt="triangle svg">
       </div>
     </div>
     <div class="launch__container">
       <div class="header__landing-page">
-        <h1 class="project__name">Dibodev</h1>
-        <img src="assets/images/dibodev.png" alt="Dibodev" class="project__logo">
+        <h1 class="project__name">{{projectName}}</h1>
+        <img  src="assets/images/{{projectPicture}}" alt="{{projectName}}" class="project__logo">
       </div>
       <div class="button__container">
         <button mat-stroked-button class="about__us--btn">En savoir plus</button>
       </div>
     </div>
-    <img src="assets/images/dibodev-ordi-mockup.png"
-         alt="Dibodev mockup website project" class="laptop__mockup">
+    <img src="assets/images/{{mockup1}}"
+         alt="{{projectName}} mockup website project" class="laptop__mockup">
   </div>
 </section>
 
 
-<section style="background: #d3334d; height: 94vh;" id="programming__language" class="work__section">
+<section style="height: 94vh; {{projectColor}}" id="programming__language" class="work__section">
   <div style="display: flex; flex-direction: column; width: 100%; align-items: center; justify-content: center;">
     <div class="programming-language__container" style="justify-content: center;">
       <h2 class="modern__technologies">Technologies modernes</h2>
@@ -36,31 +36,29 @@
   </div>
 </section>
 
-<section style="background: #d3334d; height: 94vh;" id="work__details--page" class="work__section">
+<section style="height: 94vh; {{projectColor}}" id="work__details--page" class="work__section">
   <div class="work-details__container" style="justify-content: center;">
-    <img src="assets/images/dibodev-mockup-phone.png" alt="Dibodev mockup website project" class="mobile__mockup">
+    <img src="assets/images/{{mockup2}}" alt="{{projectName}} mockup website project" class="mobile__mockup">
     <div class="details__content">
       <div class="details__info">
-        <h2 class="details__title">Description et Informations sur le projet dibodev</h2>
+        <h2 class="details__title">Description et Informations sur le projet {{projectName}}</h2>
         <div class="description__container">
-          <small class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores commodi
-            delectus, dolores ex excepturi molestias nemo neque nihil officiis perferendis temporibus
-            voluptatem.</small>
+          <small class="description">{{projectDescription}}</small>
         </div>
       </div>
       <div class="time__infos">
         <div class="product__year">
-          <span class="material-icons-round">schedule</span><span>Année de production : </span><span class="year"> 2021</span>
+          <span class="material-icons-round">schedule</span><span>Année de production : </span><span class="year"> {{year}}</span>
         </div>
         <div class="product__year">
-          <span class="material-icons-round">schedule</span><span>Temp de production : </span><span class="year"> 2 semaines</span>
+          <span class="material-icons-round">schedule</span><span>Temp de production : </span><span class="year"> {{productionTime}}</span>
         </div>
       </div>
       <div class="call-to-action">
-        <button mat-stroked-button class="about__us--btn" style="margin-right: 16px">Visiter le site</button>
-        <button mat-stroked-button class="about__us--btn github__link">
+        <a role="button" href="{{websiteUrl}}" mat-stroked-button class="about__us--btn" style="margin-right: 16px">Visiter le site</a>
+        <a role="button" href="{{github}}" mat-stroked-button class="about__us--btn github__link">
           <i class="fab fa-github" style="font-size: 20px; margin-bottom: 4px; margin-right: 5px;"></i> Github
-        </button>
+        </a>
       </div>
     </div>
   </div>

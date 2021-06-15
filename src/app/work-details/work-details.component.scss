@@ -17,10 +17,12 @@ html, body {
   color: #ffffff;
   font-size: 4.5rem;
   margin-right: 35px;
+  text-transform: capitalize;
 }
 
 .laptop__mockup {
   width: 900px;
+  z-index: 99;
 }
 
 .mobile__mockup {
@@ -48,6 +50,7 @@ html, body {
   display: flex;
   align-items: center;
   padding-bottom: 24px;
+  z-index: 99;
 }
 
 .about__us--btn {
@@ -358,4 +361,38 @@ html, body {
 }
 #work__details--page {
   min-height: 800px;
+}
+/*Parallax Svg*/
+.fly__item {
+  position: absolute;
+  top: 40vh;
+  left: 10vw;
+  width: 25vw;
+  opacity: .06;
+}
+.fly__item--center {
+  width: 10vw;
+  top: 10vw;
+  left: 50%;
+  right: auto;
+  opacity: .04;
+
+  & .svg__square {
+    transform: rotate(-25deg);
+    width: 100%;
+  }
+}
+
+.fly__item--right {
+  width: 15vw;
+  top: 25vw;
+  left: auto;
+  right: 5vw;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  opacity: .05;
+  & .svg__triangle {
+    transform: rotate(-25deg);
+    width: 100%;
+  }
 }

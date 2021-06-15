@@ -8,6 +8,7 @@ export const environment = {
   production: false,
   skillsApi: 'https://dibodev-api.herokuapp.com/categories',
   projectsApi: 'https://dibodev-api.herokuapp.com/projects',
+  projectDetailsApi : 'https://dibodev-api.herokuapp.com/project/',
   categoriesObject: {},
   mail: 'contact@dibodev.com',
   urlApp: 'http://localhost:4200',
