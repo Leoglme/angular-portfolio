@@ -6,6 +6,7 @@ import {environment} from '../../environments/environment';
 import {ActivatedRoute, Router} from '@angular/router';
 import {LoaderService} from '../loader/loader.service';
 const url = 'assets/landing.js';
+import { ChangeDetectorRef } from '@angular/core';
 @Component({
   selector: 'app-main-nav',
   templateUrl: './main-nav.component.html',
@@ -27,7 +28,7 @@ export class MainNavComponent implements OnInit{
 
   // @ts-ignore
   constructor(private breakpointObserver: BreakpointObserver, router: Router,
-              public loaderService: LoaderService) {
+              public loaderService: LoaderService, private cdRef: ChangeDetectorRef) {
     if (this.currentPage  === '/404/page-not-found'){
       // @ts-ignore
       setTimeout(() => this.loaderService = false, 1000);
@@ -38,6 +39,11 @@ export class MainNavComponent implements OnInit{
       this.loadScript();
       this.not_foundResponsive();
     });
+  }
+  // tslint:disable-next-line:use-lifecycle-interface
+  ngAfterViewChecked()
+  {
+    this.cdRef.detectChanges();
   }
   ngOnInit(): void {
     this.getDisplaySize();
@@ -62,6 +68,10 @@ export class MainNavComponent implements OnInit{
     }
     // @ts-ignore
     section.scrollIntoView({behavior: "smooth", block: element === 'contact' ? 'end' : 'center', inline: "nearest"});
+  }
+
+  scrollTop() {
+    console.log('bidule chouette');
   }
 
   public loadScript() {

@@ -124,6 +124,8 @@ export const  allIcons = new Map([
   ['expressJs', IconList.expressJs],
   ['sass', IconList.sass],
   ['scss', IconList.scss],
+  ['saas', IconList.scss],
+  ['sass/scss', IconList.scss],
   ['html', IconList.html],
   ['css', IconList.css],
   ['jquery', IconList.jquery],

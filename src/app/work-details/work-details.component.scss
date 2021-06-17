@@ -198,31 +198,28 @@ html, body {
   }
 }
 
-@media (max-width: 1405px)  {
+@media (max-width: 1680px)  {
   .laptop__mockup {
     transform: scale(0.7);
   }
 }
-@media (max-width: 1355px)  {
+@media (max-width: 1538px)  {
   .work__section {
     height: 80vh;
   }
   .laptop__mockup {
     transform: scale(0.7) translateY(8%);
   }
-  .mobile__mockup {
-    width: 380px;
-  }
   .work-landing__container {
     width: 100%;
     flex-direction: column-reverse;
     justify-content: flex-end;
   }
-  .launch__container {
-    padding: 0;
-  }
   .header__landing-page{
     flex-direction: row-reverse;
+  }
+  .launch__container {
+    padding: 0;
   }
   .project__logo {
     margin-right: 16px;
@@ -236,7 +233,13 @@ html, body {
   .project__logo {
     width: 110px;
   }
-  .modern__technologies {
+
+}
+@media (max-width: 1355px)  {
+  .mobile__mockup {
+    width: 380px;
+  }
+   .modern__technologies {
     font-size: 8rem;
   }
 }
@@ -335,7 +338,7 @@ html, body {
     padding: 0.5rem 2.5rem;
   }
 }
-@media (max-width: 470px) {
+@media (max-width: 485px) {
   .project__name {
     font-size: 2rem;
   }
@@ -372,7 +375,7 @@ html, body {
 }
 .fly__item--center {
   width: 10vw;
-  top: 10vw;
+  top: 8vw;
   left: 50%;
   right: auto;
   opacity: .04;
@@ -385,7 +388,7 @@ html, body {
 
 .fly__item--right {
   width: 15vw;
-  top: 25vw;
+  top: 38vw;
   left: auto;
   right: 5vw;
   -webkit-transform: rotate(45deg);
