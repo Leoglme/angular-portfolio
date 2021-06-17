@@ -4,7 +4,9 @@ import {allIcons} from './IconList';
 import {environment} from "../../environments/environment";
 import {CategoriesService} from "../Services/categories.service";
 import {ActivatedRoute, Router} from "@angular/router";
+
 declare var Rellax: any;
+
 @Component({
   selector: 'app-work-details',
   templateUrl: './work-details.component.html',
@@ -35,10 +37,33 @@ export class WorkDetailsComponent implements OnInit {
     const rellax = new Rellax('.rellax');
   }
 
+  findPos(obj: any) {
+    let curtop = 0;
+    if (obj.offsetParent) {
+      do {
+        curtop += obj.offsetTop;
+      } while (obj === obj.offsetParent);
+      return [curtop];
+    } else {
+      return null;
+    }
+  }
+
+  scrollToElement(event: any, cible: any): void {
+    const nextCible = document.getElementById(cible);
+    if (nextCible) {
+      const y = event.target.getBoundingClientRect().top + nextCible.clientHeight;
+      window.scroll({
+        top: y,
+        behavior: 'smooth'
+      });
+    }
+  }
+
   getData() {
     this.activeRoute.params.subscribe(params => {
       const currentProject = params.name;
-      if (currentProject){
+      if (currentProject) {
         this.http.getDataCategories(environment.projectDetailsApi + currentProject).subscribe(
           (data: any) => {
             this.projects = data;
@@ -53,13 +78,13 @@ export class WorkDetailsComponent implements OnInit {
             this.year = data.year;
             this.projectColor = 'background: ' + data.color;
             const tempLang: any[] = [];
-            if (data.languages){
+            if (data.languages) {
               data.languages.forEach((lang: any) => {
-                if (lang.split('/').length > 1 && lang !== 'sass/scss'){
+                if (lang.split('/').length > 1 && lang !== 'sass/scss') {
                   lang.split('/').forEach((explodeLang: any) => {
                     tempLang.push(explodeLang);
                   });
-                }else{
+                } else {
                   tempLang.push(lang);
                 }
               });
@@ -69,7 +94,7 @@ export class WorkDetailsComponent implements OnInit {
             this.renderIcons();
             if (this.projects) {
               console.log(this.projects);
-            }else{
+            } else {
               console.log('got 404');
             }
           },
@@ -78,16 +103,17 @@ export class WorkDetailsComponent implements OnInit {
           }, () => {
           }
         );
-      }else{
+      } else {
         console.log('got 404');
       }
     });
   }
+
   renderIcons(): void {
     let html = '';
-    if (this.projectLanguage){
+    if (this.projectLanguage) {
       this.projectLanguage.forEach(lang => {
-        if (allIcons.get(lang)){
+        if (allIcons.get(lang)) {
           html += allIcons.get(lang);
         }
       });
