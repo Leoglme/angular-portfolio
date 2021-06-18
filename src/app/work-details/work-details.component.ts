@@ -31,6 +31,7 @@ export class WorkDetailsComponent implements OnInit {
   }
 
   projectLanguage: string[] | undefined;
+  notFoundRoute = '404/page-not-found';
 
   ngOnInit(): void {
     this.getData();
@@ -92,19 +93,17 @@ export class WorkDetailsComponent implements OnInit {
             }
             this.projectLanguage = tempLang;
             this.renderIcons();
-            if (this.projects) {
-              console.log(this.projects);
-            } else {
-              console.log('got 404');
+            if (!this.projects) {
+              this.router.navigate(['./' + this.notFoundRoute]).then(r => (''));
             }
           },
           (err: any) => {
-            console.log('got 404');
+            this.router.navigate(['./' + this.notFoundRoute]).then(r => (''));
           }, () => {
           }
         );
       } else {
-        console.log('got 404');
+        this.router.navigate(['./' + this.notFoundRoute]).then(r => (''));
       }
     });
   }
