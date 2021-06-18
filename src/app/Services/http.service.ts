@@ -18,4 +18,7 @@ export class HttpService {
   sendEmail(url: string, data: any) {
     return this.http.post(url, data);
   }
+  connect(url: string, data: any) {
+    return this.http.post(url, data);
+  }
 }

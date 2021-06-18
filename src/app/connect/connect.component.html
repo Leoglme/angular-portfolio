@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="assets/images/about-avatar.png" alt="avatar"
+             class="rounded-circle img-responsive">
+      </div>
+      <div class="modal-body mb-1">
+
+        <h5 class="mt-1 mb-2 text-center">Léo</h5>
+        <div class="md-form ml-0 mr-0">
+          <input type="password" id="form29" class="form-control form-control-sm ml-0"
+                 mdbInput mdbValidate [formControl]="modalFormAvatarPassword">
+          <label for="form29" class="ml-0">Mot de passe</label>
+          <mdb-error
+            *ngIf="modalFormAvatarPassword.invalid && (modalFormAvatarPassword.dirty || modalFormAvatarPassword.touched)">
+            Input invalid
+          </mdb-error>
+          <mdb-success
+            *ngIf="modalFormAvatarPassword.valid && (modalFormAvatarPassword.dirty || modalFormAvatarPassword.touched)">
+            Input valid
+          </mdb-success>
+        </div>
+        <div class="text-center mt-4">
+          <button mdbBtn color="cyan" rounded="true" class="mt-1 waves-light" mdbWavesEffect>Se connecter
+            <mdb-icon fas icon="sign-in-alt" class="ml-1"></mdb-icon>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<form id="contact__form" (submit)="register($event)">
+  <mdb-card class="contact__card">
+    <div class="card-body">
+      <!-- Header -->
+      <div class="form-header blue accent-1">
+        <h3 class="mt-2"><i class="fas fa-envelope"></i> Contacter moi</h3>
+      </div>
+      <div class="md-form">
+        <i class="fas fa-envelope prefix grey-text"></i>
+        <input mdbInput type="password" id="form-password" class="form-control" autocomplete="off" [formControl]="passwordFormControl">
+        <label for="form-password">Votre email</label>
+        <mdb-error *ngIf="passwordFormControl.hasError('required')">
+          Votre mot de passe est <strong>requis</strong>
+        </mdb-error>
+        <mdb-error *ngIf="passwordFormControl.hasError('maxlength')">
+          Votre mot de passe doit comporter moins de 120 caractères.
+        </mdb-error>
+        <mdb-error *ngIf="passwordFormControl.hasError('minLength')">
+          Votre mot de passe doit comporter au moins 6 caractères.
+        </mdb-error>
+        <mdb-error *ngIf="passwordFormControl.hasError('pattern')">Se connecter
+          Caractère spéciaux non autorisé.
+        </mdb-error>
+      </div>
+      <div class="center">
+        <button
+          mat-raised-button
+          [disabled]="passwordFormControl.invalid || loading"
+          class="button">
+          <span class="submit">Se connecter</span>
+          <span class="loading">
+          <div class="spinner-grow" role="status">
+            <span class="sr-only">Connexion...</span>
+        </div>
+            <div class="spinner-grow" role="status">
+            <span class="sr-only">Connexion...</span>
+        </div>
+            <div class="spinner-grow" role="status">
+            <span class="sr-only">Connexion...</span>
+        </div>
+        </span>
+          <span class="check">Connexion réussie<i class="fa fa-check"></i></span>
+        </button>
+      </div>
+    </div>
+  </mdb-card >
+
+</form>
+
