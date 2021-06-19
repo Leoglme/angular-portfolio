@@ -17,7 +17,7 @@ export class ConnectComponent implements OnInit {
   passwordFormControl = new FormControl("", [
     Validators.required,
     Validators.minLength(6),
-    Validators.maxLength(120),
+    Validators.maxLength(40),
     Validators.pattern(/^[a-zA-Z0-9!?_ñ.\- é@àôîÏè#$%^&*()]+$/)
   ]);
 

@@ -13,23 +13,22 @@
   display: flex;
   justify-content: center; }
 
-.contact__card {
-  transform: translate(0, -30%);
+.connect_card {
   width: 30%;
   min-width: 525px;
   max-width: unset;
   padding: 40px 40px 30px 40px; }
 
 .form-header {
-  transform: translate(0, -50%);
   padding: 1rem;
-  margin-top: -3.13rem;
-  margin-bottom: 3rem;
   color: #fff;
   text-align: center;
   border-radius: .125rem;
-  -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); }
+  display: flex;
+  justify-content: center;
+  margin: -10rem 0 -1rem; }
+  .form-header .img-responsive {
+    width: 180px; }
 
 .form-header h3 {
   overflow-wrap: break-word;
@@ -167,6 +166,17 @@
   justify-content: center;
   padding-top: 20px; }
 
+.user__name {
+  color: #616161;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 8px;
+  margin-top: 24px;
+  pointer-events: auto;
+  text-align: center; }
+
 mdb-error {
   padding: 8px 0;
   opacity: 0; }
@@ -190,21 +200,15 @@ mdb-error {
     opacity: 0; }
   100% {
     opacity: 1; } }
-@media screen and (max-width: 1300px) {
-  .contact__card {
-    transform: translate(0, -20%) !important; } }
-@media screen and (max-width: 842px) {
-  .contact__card {
-    transform: translate(0, -15%) !important; } }
 @media screen and (max-width: 580px) {
-  .contact__card {
+  .connect_card {
     width: 85%;
     min-width: unset; } }
 @media screen and (max-width: 480px) {
-  .contact__card h3 {
+  .connect_card h3 {
     font-size: 1.5rem; }
 
-  .contact__card {
+  .connect_card {
     padding: 40px 2px 30px; } }
 /*# sourceMappingURL=login.component.css.map */
 
