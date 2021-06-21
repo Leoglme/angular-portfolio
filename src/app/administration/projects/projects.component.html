@@ -4,11 +4,11 @@
   <!--Stepper add project-->
   <mdb-card class="add__projet--card">
     <div class="two alt-two mt-2" data-aos="zoom-in">
-      <h1 style="margin-top: 16px;">Ajouter une catégorie
+      <h1 style="margin-top: 16px;">Ajouter un projet
       </h1>
     </div>
     <form id="add__project" (submit)="submitData($event)">
-    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+      <mat-horizontal-stepper [linear]="isLinear" #stepper>
         <mat-step>
           <ng-template matStepLabel>Infos du projet</ng-template>
           <!--Step 1 - Row 1-->
@@ -217,7 +217,7 @@
         <mat-step>
           <ng-template matStepLabel>Confirmation</ng-template>
           <h3 class="confirm__text">Confirmer l'ajout du projet {{changeProjectName}} ?</h3>
-          <button mdbBtn type="submit" class="next__btn" matStepperNext mdbWavesEffect>Suivant
+          <button mdbBtn type="submit" class="next__btn" matStepperNext mdbWavesEffect>Valider
             <mdb-icon style="margin-left: 8px;
               font-size: 16px;" fas icon="check"></mdb-icon>
           </button>
@@ -229,8 +229,7 @@
               font-size: 16px;" fas icon="trash-alt"></mdb-icon></button>
           </div>
         </mat-step>
-    </mat-horizontal-stepper>
+      </mat-horizontal-stepper>
     </form>
   </mdb-card>
 </div>
-

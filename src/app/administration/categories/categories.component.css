@@ -92,11 +92,39 @@ mdb-error {
   display: flex;
   align-items: center; }
 
+.cont {
+  cursor: pointer;
+  background: #343a40;
+  color: #EEE;
+  border-radius: 5px;
+  border: thin solid #444;
+  overflow: hidden;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+div.stars {
+  display: inline-block; }
+
 .confirm__text {
   color: #343a40;
   font-size: 20px;
   font-weight: 400;
   margin: 32px 0; }
+
+.note__count {
+  margin-right: 16px;
+  background: white;
+  color: #343a40;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  border-radius: 3px;
+  font-weight: 500;
+  flex-wrap: wrap; }
 
 .year__picker {
   margin-left: 16px; }

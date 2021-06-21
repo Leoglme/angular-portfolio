@@ -45,6 +45,7 @@ import { ColorPickerModule } from 'ngx-color-picker';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatStepperModule} from '@angular/material/stepper';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { NgxStarRatingModule } from 'ngx-star-rating';
 /*Custom Picker*/
 import {CommonModule} from '@angular/common';
 import {A11yModule} from '@angular/cdk/a11y';
@@ -171,6 +172,7 @@ export class MaterialModule {}
     CommonModule,
     MaterialModule,
     MultiDatepickerModule,
+    NgxStarRatingModule,
     NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [

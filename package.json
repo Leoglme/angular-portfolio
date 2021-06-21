@@ -47,6 +47,7 @@
     "ngx-page-scroll-core": "^7.0.4",
     "ngx-pagination": "^5.0.0",
     "ngx-progressbar": "^6.1.0",
+    "ngx-star-rating": "^2.0.2",
     "postcss": "^8.2.4",
     "rellax": "^1.12.1",
     "rxjs": "~6.6.0",

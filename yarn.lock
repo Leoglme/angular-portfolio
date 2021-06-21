@@ -6397,6 +6397,13 @@ ngx-progressbar@^6.1.0:
   dependencies:
     tslib "^2.0.0"
 
+ngx-star-rating@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/ngx-star-rating/-/ngx-star-rating-2.0.2.tgz#b87a4d31f579e3e379fa4de01dccca1e655465b3"
+  integrity sha512-qXDsZYq9qMt9yHwdITaTigoH0ABvyBuwGTjBPeIQL4Pkiwr0WiIPv2Bi0j/Fcci+SexP3LJ3N6Mcvh63AjloJg==
+  dependencies:
+    tslib "^2.0.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.npmjs.org/nice-try/-/nice-try-1.0.5.tgz"
