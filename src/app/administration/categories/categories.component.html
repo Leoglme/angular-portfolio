@@ -1,3 +1,235 @@
 <app-navigation>
 </app-navigation>
-<p style="top: 100px; position: relative; text-align: center;">categories works!</p>
+<div class="main">
+  <!--Stepper add project-->
+  <mdb-card class="add__projet--card">
+    <div class="two alt-two mt-2" data-aos="zoom-in">
+      <h1 style="margin-top: 16px;">Ajouter un projet
+      </h1>
+    </div>
+    <form id="add__project" (submit)="submitData($event)">
+      <mat-horizontal-stepper [linear]="isLinear" #stepper>
+        <mat-step>
+          <ng-template matStepLabel>Infos du projet</ng-template>
+          <!--Step 1 - Row 1-->
+          <div class="form__group">
+            <div class="md-form" style="width: 100%; margin-right: 16px;">
+              <mdb-icon style="color: #d3334d" fas icon="info-circle" class="prefix"></mdb-icon>
+              <input mdbInput type="text" id="name" class="form-control" autocomplete="off"
+                     [formControl]="nameFormControl" required>
+              <label for="name">Nom du projet</label>
+              <mdb-error *ngIf="nameFormControl.hasError('required')">
+                Ce champ est <strong>requis</strong>
+              </mdb-error>
+              <mdb-error *ngIf="nameFormControl.hasError('maxlength')">
+                Ce champ doit comporter moins de <strong>60</strong> caractères.
+              </mdb-error>
+              <mdb-error *ngIf="nameFormControl.hasError('minlength')">
+                Ce champ doit comporter au moins <strong>2</strong> caractères.
+              </mdb-error>
+              <mdb-error *ngIf="nameFormControl.hasError('pattern')">
+                Caractère spéciaux non autorisé.
+              </mdb-error>
+            </div>
+
+            <div class="md-form" style="width: 100%; margin-left: 16px;">
+              <mdb-icon style="color: #d3334d" fas icon="clock" class="prefix"></mdb-icon>
+              <input mdbInput type="text" id="production__time" class="form-control" autocomplete="off"
+                     [formControl]="productionTimeControl" required>
+              <label for="production__time">Temp de production</label>
+              <mdb-error *ngIf="productionTimeControl.hasError('required')">
+                Ce champ est <strong>requis</strong>
+              </mdb-error>
+              <mdb-error *ngIf="productionTimeControl.hasError('maxlength')">
+                Ce champ doit comporter moins de <strong>120</strong> caractères.
+              </mdb-error>
+              <mdb-error *ngIf="productionTimeControl.hasError('minlength')">
+                Ce champ doit comporter au moins <strong>2</strong> caractères.
+              </mdb-error>
+              <mdb-error *ngIf="productionTimeControl.hasError('pattern')">
+                Caractère spéciaux non autorisé.
+              </mdb-error>
+            </div>
+          </div>
+
+          <!--Step 1 - row 2-->
+          <div class="form__group" style="align-items: center;">
+            <div class="md-form" style="margin: 0 16px 0 0; width: 100%;">
+              <mdb-icon style="color: #d3334d" fas icon="palette" class="prefix"></mdb-icon>
+              <input mdbInput [style.background]="color" style="margin-top: 5px;" [value]="color"
+                     [(colorPicker)]="color" type="text" id="color"
+                     class="form-control" [formControl]="colorControl" required>
+              <label for="color">Couleur</label>
+              <mdb-error *ngIf="colorControl.hasError('required')">
+                Ce champ est <strong>requis</strong>
+              </mdb-error>
+            </div>
+            <div class="year__picker" style="width: 100%;">
+              <app-multi-datepicker tabindex="-1" mode="YEAR" label="Année de production" [(ngModel)]="chosenYearDate"
+                                    name="year"
+                                    [max]="currencyYear"></app-multi-datepicker>
+            </div>
+          </div>
+
+          <!--Step 1 - Row 3-->
+          <div class="form__group">
+            <div class="md-form" style="width: 100%; margin-right: 16px;">
+              <mdb-icon style="color: #d3334d" fas icon="link" class="prefix"></mdb-icon>
+              <input mdbInput type="text" id="url" class="form-control" autocomplete="off"
+                     [formControl]="urlFormControl" required>
+              <label for="url">Url site web</label>
+              <mdb-error *ngIf="urlFormControl.hasError('required')">
+                Ce champ est <strong>requis</strong>
+              </mdb-error>
+              <mdb-error *ngIf="urlFormControl.hasError('maxlength')">
+                Ce champ doit comporter moins de <strong>120</strong> caractères.
+              </mdb-error>
+              <mdb-error *ngIf="urlFormControl.hasError('minlength')">
+                Ce champ doit comporter au moins <strong>5</strong> caractères.
+              </mdb-error>
+            </div>
+
+            <div class="md-form" style="width: 100%; margin-left: 16px;">
+              <mdb-icon style="color: #d3334d" fab icon="github" class="prefix"></mdb-icon>
+              <input mdbInput type="text" id="github" class="form-control" autocomplete="off"
+                     [formControl]="githubControl" required>
+              <label for="github">Lien Github</label>
+              <mdb-error *ngIf="githubControl.hasError('required')">
+                Ce champ est <strong>requis</strong>
+              </mdb-error>
+              <mdb-error *ngIf="githubControl.hasError('maxlength')">
+                Ce champ doit comporter moins de <strong>120</strong> caractères.
+              </mdb-error>
+              <mdb-error *ngIf="githubControl.hasError('minlength')">
+                Ce champ doit comporter au moins <strong>5</strong> caractères.
+              </mdb-error>
+            </div>
+          </div>
+
+          <!--Step 1 - row 4 -->
+          <ng-multiselect-dropdown
+            name="Languages"
+            [placeholder]="'Languages et technologies'"
+            [settings]="dropdownSettings"
+            [data]="dropdownList"
+            [(ngModel)]="selectedItems"
+            (onSelect)="onItemSelect($event)"
+            (onSelectAll)="onSelectAll($event)"
+            (onDeSelect)="onDeSelect($event)"
+          >
+          </ng-multiselect-dropdown>
+
+          <div class="md-form">
+            <mdb-icon style="color: #d3334d" fas icon="pencil-alt" class="prefix"></mdb-icon>
+            <textarea id="description" class="md-textarea md-textarea-auto form-control" mdbInput
+                      [formControl]="descriptionControl" required></textarea>
+            <label for="description">Description du projet</label>
+            <mdb-error style="transform: translateY(50%);" *ngIf="descriptionControl.hasError('required')">
+              Ce champ est <strong>requis</strong>
+            </mdb-error>
+            <mdb-error style="transform: translateY(50%);" *ngIf="descriptionControl.hasError('maxlength')">
+              Ce champ doit comporter moins de <strong>300</strong> caractères.
+            </mdb-error>
+            <mdb-error style="transform: translateY(50%);" *ngIf="descriptionControl.hasError('minlength')">
+              Ce champ doit comporter au moins <strong>25</strong> caractères.
+            </mdb-error>
+            <mdb-error style="transform: translateY(50%);" *ngIf="descriptionControl.hasError('pattern')">
+              Caractère spéciaux non autorisé.
+            </mdb-error>
+          </div>
+
+
+          <div class="container__actionBtn">
+            <button mdbBtn type="button" class="next__btn" matStepperNext mdbWavesEffect>Suivant
+              <mdb-icon style="margin-left: 8px;
+              font-size: 16px;" fas icon="angle-double-right"></mdb-icon>
+            </button>
+          </div>
+        </mat-step>
+        <mat-step label="Media du projet">
+          <!--Step 2 - Row 1-->
+          <div class="md-form">
+            <mdb-icon style="color: #d3334d" far icon="image" class="prefix"></mdb-icon>
+            <input mdbInput style="cursor: pointer" type="text" id="logo" class="form-control" autocomplete="off"
+                   [formControl]="logoControl" required readonly [value]="fileLogoName" (click)="logo_input.click()">
+            <label for="logo">Logo</label>
+            <mdb-error *ngIf="logoControl.hasError('required')">
+              Ce champ est <strong>requis</strong>
+            </mdb-error>
+            <input
+              type="file"
+              hidden
+              accept="image/*"
+              #logo_input
+              (change)="handleFileInputChange(logo_input.files, 'logo')"
+            />
+          </div>
+
+          <!--Step 2 - Row 2-->
+          <div class="md-form">
+            <mdb-icon style="color: #d3334d" far icon="image" class="prefix"></mdb-icon>
+            <input mdbInput style="cursor: pointer" type="text" id="mockup1" class="form-control" autocomplete="off"
+                   [formControl]="mockup1Control" required readonly [value]="fileMockup1Name" (click)="mockup1_input.click()">
+            <label for="mockup1">Premier mockup</label>
+            <mdb-error *ngIf="mockup1Control.hasError('required')">
+              Ce champ est <strong>requis</strong>
+            </mdb-error>
+            <input
+              type="file"
+              hidden
+              accept="image/*"
+              #mockup1_input
+              (change)="handleFileInputChange(mockup1_input.files, 'mockup1')"
+            />
+          </div>
+
+          <!--Step 2 - Row 3-->
+          <div class="md-form">
+            <mdb-icon style="color: #d3334d" far icon="image" class="prefix"></mdb-icon>
+            <input mdbInput style="cursor: pointer" type="text" id="mockup2" class="form-control" autocomplete="off"
+                   [formControl]="mockup2Control" required readonly [value]="fileMockup2Name" (click)="mockup2_input.click()">
+            <label for="mockup2">Second mockup</label>
+            <mdb-error *ngIf="mockup2Control.hasError('required')">
+              Ce champ est <strong>requis</strong>
+            </mdb-error>
+            <input
+              type="file"
+              hidden
+              accept="image/*"
+              #mockup2_input
+              (change)="handleFileInputChange(mockup2_input.files, 'mockup2')"
+            />
+          </div>
+
+
+
+
+          <div class="container__actionBtn">
+            <button mdbBtn type="button" class="prev__btn" matStepperPrevious mdbWavesEffect><mdb-icon style="margin-right: 8px;
+              font-size: 16px;" fas icon="angle-double-left"></mdb-icon> Précédent
+            </button>
+            <button mdbBtn type="button" class="next__btn" matStepperNext mdbWavesEffect>Suivant
+              <mdb-icon style="margin-left: 8px;
+              font-size: 16px;" fas icon="angle-double-right"></mdb-icon>
+            </button>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Confirmation</ng-template>
+          <h3 class="confirm__text">Confirmer l'ajout du projet {{changeProjectName}} ?</h3>
+          <button mdbBtn type="submit" class="next__btn" matStepperNext mdbWavesEffect>Suivant
+            <mdb-icon style="margin-left: 8px;
+              font-size: 16px;" fas icon="check"></mdb-icon>
+          </button>
+          <div class="container__actionBtn">
+            <button mdbBtn type="button" class="prev__btn" matStepperPrevious mdbWavesEffect><mdb-icon style="margin-right: 8px;
+              font-size: 16px;" fas icon="angle-double-left"></mdb-icon> Précédent
+            </button>
+            <button mdbBtn type="button" class="next__btn" mdbWavesEffect (click)="stepper.reset(); resetStepper()">Réinitialiser <mdb-icon style="margin-left: 8px;
+              font-size: 16px;" fas icon="trash-alt"></mdb-icon></button>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </form>
+  </mdb-card>
+</div>

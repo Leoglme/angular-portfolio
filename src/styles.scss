@@ -458,3 +458,12 @@ button:focus {
   -webkit-animation: unset !important;
   animation: unset !important;
 }
+
+@media (max-width: 500px) {
+  .mat-step-text-label, .mat-step-header .mat-step-label  {
+    display: none;
+  }
+  .mat-horizontal-stepper-header .mat-step-icon{
+    margin-right: 0 !important;
+  }
+}

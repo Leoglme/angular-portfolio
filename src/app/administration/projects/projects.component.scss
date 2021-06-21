@@ -1,4 +1,4 @@
-.main{
+.main {
   height: calc(100% - 85px);
   top: 80px;
   position: relative;
@@ -7,6 +7,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 .mat-stepper-horizontal {
   margin-top: 8px;
 }
@@ -14,20 +15,25 @@
 .mat-form-field {
   margin-top: 16px;
 }
-.add__projet--card{
+
+.add__projet--card {
   max-width: 1200px;
   width: 70%;
   padding: 16px;
 }
+
 ::ng-deep .mat-step-header .mat-step-icon-selected {
   background-color: #d3334d !important;
 }
+
 ::ng-deep .mat-step-icon-state-done {
   background-color: #d3334d !important;
 }
+
 ::ng-deep .mat-step-icon-state-edit {
   background-color: #d3334d !important;
 }
+
 .error-message {
   color: #d3334d;
 }
@@ -68,7 +74,7 @@ mdb-error {
   animation-duration: .4s;
 }
 
-.stepper__title{
+.stepper__title {
   color: rgb(97, 97, 97);
   font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   font-size: 24px;
@@ -88,26 +94,71 @@ mdb-error {
     opacity: 1;
   }
 }
+
 .container__actionBtn {
   padding: 10px 0;
   display: flex;
   justify-content: flex-end;
 }
-.next__btn{
+
+.next__btn {
   background: #d3334d;
   color: #ffffff;
   display: flex;
   align-items: center;
 }
-.prev__btn{
+
+.prev__btn {
   background: #343a40;
   color: #ffffff;
   display: flex;
   align-items: center;
 }
+
 .confirm__text {
   color: #343a40;
   font-size: 20px;
   font-weight: 400;
   margin: 32px 0;
+}
+
+.year__picker {
+  margin-left: 16px;
+}
+
+@media (max-width: 1100px) {
+  .add__projet--card {
+    width: 90%;
+  }
+}
+
+.form__group {
+  display: flex;
+}
+
+@media (max-width: 785px) {
+  .main {
+    margin-left: 30px;
+  }
+  .form__group {
+    flex-wrap: wrap;
+  }
+  .md-form, .year__picker {
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .main {
+    margin-left: 0;
+    padding-bottom: 100px;
+    height: auto;
+  }
+  .form__group {
+    padding-bottom: 20px;
+  }
+  .container__actionBtn {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
 }
