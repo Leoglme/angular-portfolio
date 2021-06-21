@@ -14,6 +14,7 @@ export const environment = {
   mail: 'contact@dibodev.com',
   urlApp: 'http://localhost:4200',
   githubUrl: 'https://github.com/Leoglme',
+  linkedinUrl: 'https://www.linkedin.com/in/dibodev/',
   discordUrl: 'https://discordapp.com/users/466757841001250818',
   sendMailAPI: 'https://dibodev-api.herokuapp.com/sendmail',
 };

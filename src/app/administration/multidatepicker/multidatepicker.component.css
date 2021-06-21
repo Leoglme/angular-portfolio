@@ -1,0 +1,9 @@
+@import url(~@angular/material/prebuilt-themes/deeppurple-amber.css);
+.jp-year-picker .mat-calendar-period-button,
+.jp-month-picker .mat-calendar-period-button {
+  pointer-events: none; }
+.jp-year-picker .mat-calendar-arrow,
+.jp-month-picker .mat-calendar-arrow {
+  display: none; }
+
+/*# sourceMappingURL=multidatepicker.component.css.map */

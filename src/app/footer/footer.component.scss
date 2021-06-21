@@ -51,6 +51,12 @@
     background-color: #5467a4 !important;
   }
 }
+.btn-floating.linkedin{
+  background-color: #0082ca !important;
+  &:active{
+    background-color: #004064  !important;
+  }
+}
 
 .page-footer{
   background-color: #333b48 !important;

@@ -1,0 +1,53 @@
+::ng-deep .mat-step-header .mat-step-icon-selected {
+  background-color: #d3334d !important; }
+
+::ng-deep .mat-step-icon-state-done {
+  background-color: #d3334d !important; }
+
+::ng-deep .mat-step-icon-state-edit {
+  background-color: #d3334d !important; }
+
+.error-message {
+  color: #d3334d; }
+
+.blue.accent-1 {
+  background-color: #d3334d !important; }
+
+.md-form {
+  margin-bottom: 2rem; }
+
+.center {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px; }
+
+mdb-error {
+  padding: 8px 0;
+  opacity: 0; }
+
+.md-form input[type="text"]:focus:not([readonly]), .md-form input[type="password"]:focus:not([readonly]), .md-form input[type="email"]:focus:not([readonly]), .md-form input[type="url"]:focus:not([readonly]), .md-form input[type="time"]:focus:not([readonly]), .md-form input[type="date"]:focus:not([readonly]), .md-form input[type="datetime-local"]:focus:not([readonly]), .md-form input[type="tel"]:focus:not([readonly]), .md-form input[type="number"]:focus:not([readonly]), .md-form input[type="search-md"]:focus:not([readonly]), .md-form input[type="search"]:focus:not([readonly]), .md-form textarea.md-textarea:focus:not([readonly]) {
+  box-shadow: 0 1px 0 0 #d3334d;
+  border-bottom: 1px solid #d3334d; }
+
+.md-form input[type="text"]:focus:not([readonly]) + label, .md-form input[type="password"]:focus:not([readonly]) + label, .md-form input[type="email"]:focus:not([readonly]) + label, .md-form input[type="url"]:focus:not([readonly]) + label, .md-form input[type="time"]:focus:not([readonly]) + label, .md-form input[type="date"]:focus:not([readonly]) + label, .md-form input[type="datetime-local"]:focus:not([readonly]) + label, .md-form input[type="tel"]:focus:not([readonly]) + label, .md-form input[type="number"]:focus:not([readonly]) + label, .md-form input[type="search-md"]:focus:not([readonly]) + label, .md-form input[type="search"]:focus:not([readonly]) + label, .md-form textarea.md-textarea:focus:not([readonly]) + label {
+  color: #d3334d; }
+
+.fade-in {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: .4s; }
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.year__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0; }
+
+/*# sourceMappingURL=year-picker-component.component.css.map */

@@ -1,0 +1,26 @@
+<ng-template #tooltipDashboard> <div class="custom__tooltip" [innerHtml]="tooltipDashboardContent"></div></ng-template>
+<ng-template #tooltipProject> <div class="custom__tooltip" [innerHtml]="tooltipProjectContent"></div></ng-template>
+<ng-template #tooltipCategory> <div class="custom__tooltip" [innerHtml]="tooltipCategoryContent"></div></ng-template>
+<ng-template #tooltipDisconnect> <div class="custom__tooltip" [innerHtml]="tooltipDisconnectContent"></div></ng-template>
+
+<div class="sidebar-fixed position-fixed">
+  <div class="list-group list-group-flush" style="top: 80px; position: relative;">
+    <a mdbWavesEffect routerLink="/administration/dashboard" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect"
+    [mdbTooltip]="tooltipDashboard" placement="right">
+      <span class="material-icons-round" style="font-size: 20px;">dashboard</span>
+    </a>
+    <a mdbWavesEffect routerLink="/administration/projects" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect"
+    [mdbTooltip]="tooltipProject" placement="right">
+      <span class="material-icons-round" style="font-size: 20px;">add_box</span>
+    </a>
+    <a mdbWavesEffect routerLink="/administration/categories" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect"
+    [mdbTooltip]="tooltipCategory" placement="right">
+      <span class="material-icons-round" style="font-size: 20px;">category</span>
+    </a>
+    <a mdbWavesEffect routerLinkActive="active" [mdbTooltip]="tooltipDisconnect" placement="right"
+       class="list-group-item list-group-item-action waves-effect">
+      <span class="material-icons-round" style="font-size: 20px;">power_settings_new</span>
+    </a>
+  </div>
+
+</div>

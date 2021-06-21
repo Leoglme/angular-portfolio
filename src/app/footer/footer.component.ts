@@ -11,6 +11,7 @@ export class FooterComponent implements OnInit {
   constructor() { }
   mail = environment.mail;
   discordUrl = environment.discordUrl;
+  linkedinUrl = environment.linkedinUrl;
   githubUrl = environment.githubUrl;
   appUrl = environment.urlApp;
   ngOnInit(): void {

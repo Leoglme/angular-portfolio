@@ -37,7 +37,96 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {AdministrationComponent} from './administration/administration.component';
 import {ConnectComponent} from './connect/connect.component';
+import {NavigationModule} from './administration/navigation/navigation.module';
+import { ProjectsComponent } from './administration/projects/projects.component';
+import { DashboardComponent } from './administration/dashboard/dashboard.component';
+import {AdminCategoriesComponent} from './administration/categories/categories.component';
+import { ColorPickerModule } from 'ngx-color-picker';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatStepperModule} from '@angular/material/stepper';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+/*Custom Picker*/
+import {CommonModule} from '@angular/common';
+import {A11yModule} from '@angular/cdk/a11y';
+import {BidiModule} from '@angular/cdk/bidi';
+import {ObserversModule} from '@angular/cdk/observers';
+import {OverlayModule} from '@angular/cdk/overlay';
+import {PlatformModule} from '@angular/cdk/platform';
+import {PortalModule} from '@angular/cdk/portal';
+import {CdkStepperModule} from '@angular/cdk/stepper';
+import {CdkTableModule} from '@angular/cdk/table';
+import {MultiDatepickerModule} from './administration/multidatepicker/multidatepicker.module';
+import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatCardModule} from '@angular/material/card';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatInputModule} from '@angular/material/input';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatSelectModule} from '@angular/material/select';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatSortModule} from '@angular/material/sort';
+import {MatTableModule} from '@angular/material/table';
 
+@NgModule({
+  exports: [
+    A11yModule,
+    BidiModule,
+    ObserversModule,
+    OverlayModule,
+    PlatformModule,
+    PortalModule,
+    CdkStepperModule,
+    CdkTableModule,
+
+    // Material
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+  ]
+})
+export class MaterialModule {}
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +147,10 @@ import {ConnectComponent} from './connect/connect.component';
     FooterComponent,
     WorkDetailsComponent,
     AdministrationComponent,
-    ConnectComponent
+    ConnectComponent,
+    ProjectsComponent,
+    DashboardComponent,
+    AdminCategoriesComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +165,13 @@ import {ConnectComponent} from './connect/connect.component';
     MatListModule,
     MatGridListModule, ReactiveFormsModule, HttpClientModule,
     MatProgressBarModule, FontAwesomeModule, MatTooltipModule,
-    FormsModule, ModalModule, TooltipModule, PopoverModule
+    FormsModule, ModalModule, TooltipModule, PopoverModule, NavigationModule,
+    ColorPickerModule,
+    MatTabsModule, MatStepperModule,
+    CommonModule,
+    MaterialModule,
+    MultiDatepickerModule,
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [
     HttpService,

@@ -426,3 +426,35 @@ button:focus {
     width: 50px;
   }
 }
+.year__container.md-form .prefix {
+  position: relative !important;
+  margin-right: 6px;
+  color: #d3334d;
+}
+
+.mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+  background: transparent;
+  border: unset;
+}
+.mat-calendar-body-selected {
+  background-color: #d3334d;
+  color: #fff;
+  box-shadow: unset !important;
+  border: unset !important;
+}
+.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical), .cdk-keyboard-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical), .cdk-program-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+  background-color: rgba(156, 156, 156, 0.2);
+}
+.selected-item {
+  border: 1px solid #d3334d !important;
+  background: #d3334d !important;
+}
+.multiselect-item-checkbox div::before {
+  color: #d3334d !important;
+  border: 2px solid #d3334d !important;
+}
+.multiselect-item-checkbox input:checked + div::before {
+  background: #d3334d !important;
+  -webkit-animation: unset !important;
+  animation: unset !important;
+}

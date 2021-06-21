@@ -1,0 +1,30 @@
+
+<div class="md-form year__container">
+<mdb-icon fas icon="calendar-alt" class="prefix"></mdb-icon>
+<mat-form-field appearance="standard" style="width: 100%;"
+                [ngClass]="jpCustomFormFieldClass">
+  <mat-label>{{label}}</mat-label>
+    <input matInput
+           (click)="_openDatepickerOnClick(datepicker)"
+           (keydown.arrowdown)="_openDatepickerOnClick(datepicker)"
+           (keydown.enter)="_openDatepickerOnClick(datepicker)"
+           [formControl]="_inputCtrl"
+           [matDatepicker]="datepicker"
+           [max]="_max"
+           [min]="_min"
+           name="year"
+           id="year"
+           [value]="currencyYear"
+           readonly>
+  <mdb-error *ngIf="_inputCtrl.hasError('required')">
+    Ce champ est <strong>requis</strong>
+  </mdb-error>
+</mat-form-field>
+</div>
+<mat-datepicker #datepicker
+                (closed)="_takeFocusAway(datepicker)"
+                (yearSelected)="_yearSelectedHandler($event,datepicker)"
+                [touchUi]="touchUi"
+                panelClass="jp-year-picker"
+                startView="multi-year">
+</mat-datepicker>
