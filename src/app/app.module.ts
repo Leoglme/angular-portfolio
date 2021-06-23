@@ -40,7 +40,9 @@ import {ConnectComponent} from './connect/connect.component';
 import {NavigationModule} from './administration/navigation/navigation.module';
 import { ProjectsComponent } from './administration/projects/projects.component';
 import { DashboardComponent } from './administration/dashboard/dashboard.component';
-import {AdminCategoriesComponent} from './administration/categories/categories.component';
+import {
+  AdminCategoriesComponent
+} from './administration/categories/categories.component';
 import { ColorPickerModule } from 'ngx-color-picker';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatStepperModule} from '@angular/material/stepper';
@@ -79,7 +81,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
-
+import { SnackbarComponent } from './administration/categories/snackbar/snackbar.component';
 @NgModule({
   exports: [
     A11yModule,
@@ -90,7 +92,6 @@ import {MatTableModule} from '@angular/material/table';
     PortalModule,
     CdkStepperModule,
     CdkTableModule,
-
     // Material
     MatAutocompleteModule,
     MatButtonModule,
@@ -125,6 +126,14 @@ import {MatTableModule} from '@angular/material/table';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
+  ],
+  imports: [
+    MDBBootstrapModule,
+    MatIconModule,
+    MatButtonModule
+  ],
+  declarations: [
+    SnackbarComponent
   ]
 })
 export class MaterialModule {}
@@ -173,8 +182,10 @@ export class MaterialModule {}
     MaterialModule,
     MultiDatepickerModule,
     NgxStarRatingModule,
+    MatIconModule,
     NgMultiSelectDropDownModule.forRoot()
   ],
+  entryComponents: [SnackbarComponent],
   providers: [
     HttpService,
     {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}

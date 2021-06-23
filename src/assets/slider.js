@@ -6,7 +6,7 @@ $('.slider').bxSlider({
   hideControlOnEnd: false,
   adaptiveHeight: true,
   controls: false,
-  pause: 2500,
+  pause: 3000,
   captions: true,
   pager: $('.slider')[0].children.length > 1
 });
@@ -20,7 +20,7 @@ $('.slider__works').bxSlider({
   touchEnabled: $('.slider__works')[0].children.length > 1,
   hideControlOnEnd: false,
   controls: false,
-  pause: 2500,
+  pause: 3500,
   captions: true,
   pager: $('.slider__works')[0].children.length > 1,
   mode: 'horizontal',

@@ -19,7 +19,7 @@ export class CardsComponent implements OnInit, AfterViewInit {
   product: any;
   skillRating: string | undefined;
   currentSlide = 0;
-  perPage = 11;
+  perPage = 9;
 
   constructor(private http: HttpClient, private router: Router) {
   }
@@ -60,6 +60,7 @@ export class CardsComponent implements OnInit, AfterViewInit {
 
   fetchCategories(): void {
     this.http.get(this.skillsAPI)
+      // tslint:disable-next-line:variable-name
       .subscribe(Response => {
         this.skills = Response;
         environment.categoriesObject = Response;
@@ -97,7 +98,7 @@ export class CardsComponent implements OnInit, AfterViewInit {
                 style="${skill.btnDisable === 'true' ? 'pointer-events: none;' : ''}">
         <div>
           <!-- Card img -->
-          <img class="img-fluid" src="assets/images/${skill.imageUrl}" alt="Card image cap" style="max-width: 133px;">
+          <img class="img-fluid" src="${skill.imageUrl}" alt="Card image cap" style="max-width: 133px;">
           <a>
             <div class="mask"></div>
           </a>

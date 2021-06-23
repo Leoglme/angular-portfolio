@@ -415,5 +415,15 @@ label.star {
 
   label.star {
     font-size: 18px !important; } }
+.basic-container {
+  padding: 30px; }
+
+.mat-snack-bar-container {
+  color: #ffffff; }
+
+.mat-snack-bar-container .flex {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between; }
 
 /*# sourceMappingURL=styles.css.map */

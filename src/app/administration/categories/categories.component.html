@@ -46,7 +46,7 @@
                 hidden
                 accept="image/*"
                 #image_input
-                (change)="handleFileInputChange(image_input.files, 'image')"
+                (change)="handleFileInputChange(image_input.files, $event)"
               />
             </div>
           </div>
@@ -88,7 +88,9 @@
         <mat-step>
           <ng-template matStepLabel>Confirmation</ng-template>
           <h3 class="confirm__text">Confirmer l'ajout de la catégorie {{changeCategoryName}} ?</h3>
-          <button mdbBtn type="submit" class="next__btn" matStepperNext mdbWavesEffect>Valider
+          <button mdbBtn type="submit" class="next__btn" matStepperNext mdbWavesEffect
+                  [disabled]="btnDisableControl.invalid || nameFormControl.invalid || isError"
+          >Valider
             <mdb-icon style="margin-left: 8px;
               font-size: 16px;" fas icon="check"></mdb-icon>
           </button>
@@ -109,4 +111,3 @@
     </form>
   </mdb-card>
 </div>
-

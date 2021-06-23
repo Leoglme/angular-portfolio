@@ -17,6 +17,7 @@ export const environment = {
   linkedinUrl: 'https://www.linkedin.com/in/dibodev/',
   discordUrl: 'https://discordapp.com/users/466757841001250818',
   sendMailAPI: 'https://dibodev-api.herokuapp.com/sendmail',
+  addCategoryAPi: 'http://localhost:9000/categories/add'
 };
 
 /*
