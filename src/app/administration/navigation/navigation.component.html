@@ -3,7 +3,7 @@
 <ng-template #tooltipCategory> <div class="custom__tooltip" [innerHtml]="tooltipCategoryContent"></div></ng-template>
 <ng-template #tooltipDisconnect> <div class="custom__tooltip" [innerHtml]="tooltipDisconnectContent"></div></ng-template>
 
-<div class="sidebar-fixed position-fixed">
+<div *ngIf="isLoggedIn" class="sidebar-fixed position-fixed">
   <div class="list-group list-group-flush" style="top: 80px; position: relative;">
     <a mdbWavesEffect routerLink="/administration/dashboard" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect"
     [mdbTooltip]="tooltipDashboard" placement="right">
@@ -17,7 +17,7 @@
     [mdbTooltip]="tooltipCategory" placement="right">
       <span class="material-icons-round" style="font-size: 20px;">category</span>
     </a>
-    <a mdbWavesEffect routerLinkActive="active" [mdbTooltip]="tooltipDisconnect" placement="right"
+    <a mdbWavesEffect routerLinkActive="active" (click)="disconnect()" [mdbTooltip]="tooltipDisconnect" placement="right"
        class="list-group-item list-group-item-action waves-effect">
       <span class="material-icons-round" style="font-size: 20px;">power_settings_new</span>
     </a>
@@ -26,7 +26,7 @@
 </div>
 
 
-<div class="mobile__navigation">
+<div *ngIf="isLoggedIn" class="mobile__navigation">
   <div class="list-group list-group-flush">
     <a mdbWavesEffect routerLink="/administration/dashboard" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect"
        [mdbTooltip]="tooltipDashboard" placement="right">
@@ -40,7 +40,7 @@
        [mdbTooltip]="tooltipCategory" placement="right">
       <span class="material-icons-round" style="font-size: 20px;">category</span>
     </a>
-    <a mdbWavesEffect routerLinkActive="active" [mdbTooltip]="tooltipDisconnect" placement="right"
+    <a mdbWavesEffect routerLinkActive="active" (click)="disconnect()" [mdbTooltip]="tooltipDisconnect" placement="right"
        class="list-group-item list-group-item-action waves-effect">
       <span class="material-icons-round" style="font-size: 20px;">power_settings_new</span>
     </a>

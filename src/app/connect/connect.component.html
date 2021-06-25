@@ -19,10 +19,10 @@
           <mdb-error *ngIf="passwordFormControl.hasError('maxlength')">
             Votre mot de passe doit comporter moins de 40 caractères.
           </mdb-error>
-          <mdb-error *ngIf="passwordFormControl.hasError('minLength')">
+          <mdb-error *ngIf="passwordFormControl.hasError('minlength')">
             Votre mot de passe doit comporter au moins 6 caractères.
           </mdb-error>
-          <mdb-error *ngIf="passwordFormControl.hasError('pattern')">Se connecter
+          <mdb-error *ngIf="passwordFormControl.hasError('pattern')">
             Caractère spéciaux non autorisé.
           </mdb-error>
         </div>

@@ -64,8 +64,10 @@ export class CategoriesComponent implements OnInit, AfterViewInit {
     }
   }
   getData(){
+    console.log('data');
     this.http.getDataCategories(environment.projectsApi).subscribe(
       (data: any) => {
+        console.log(data);
         this.projects = data;
         this.filterRequest();
       },

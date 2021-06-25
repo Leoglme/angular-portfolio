@@ -1,6 +1,11 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {IDropdownSettings} from 'ng-multiselect-dropdown';
+import {Router} from '@angular/router';
+import {environment} from '../../../environments/environment';
+import {HttpClient} from '@angular/common/http';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {SnackbarComponent} from '../categories/snackbar/snackbar.component';
 
 @Component({
   selector: 'app-projects',
@@ -11,6 +16,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   public color = '#d3334d';
   isLinear = false;
   isSuccess = false;
+  durationInSeconds = 3;
   currencyYear = new Date().getFullYear().toString();
   dropdownList: any = [];
   selectedItems: any = [];
@@ -38,8 +44,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   descriptionControl = new FormControl('', [
     Validators.required,
     Validators.minLength(25),
-    Validators.maxLength(300),
-    Validators.pattern(/^[a-zA-Z0-9!?_ñ.\- é@àôîÏè#$%^&*()]+$/)
+    Validators.maxLength(600)
   ]);
   urlFormControl = new FormControl('', [
     Validators.required,
@@ -65,9 +70,12 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   ]);
   chosenYearDate = new Date().getFullYear().toString();
   visible = true;
+  isLoggedIn: any;
+  isError = false;
+  languagesApi = environment.languagesApi;
 
   // tslint:disable-next-line:variable-name
-  constructor(private _formBuilder: FormBuilder) {
+  constructor(private http: HttpClient, public snackBar: MatSnackBar, private _formBuilder: FormBuilder, private router: Router) {
   }
 
   ngAfterViewInit(): void {
@@ -84,13 +92,11 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.dropdownList = [
-      {item_id: 1, item_text: 'Mumbai'},
-      {item_id: 2, item_text: 'Bangaluru'},
-      {item_id: 3, item_text: 'Pune'},
-      {item_id: 4, item_text: 'Navsari'},
-      {item_id: 5, item_text: 'New Delhi'}
-    ];
+    this.isLoggedIn = !!localStorage.getItem('isLoggedIn');
+    if (!this.isLoggedIn) {
+      this.router.navigate(['/auth/login']);
+    }
+    this.fetchLanguages();
     // tslint:disable-next-line:no-unused-expression
     this.dropdownSettings = {
       singleSelection: false,
@@ -101,11 +107,6 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       itemsShowLimit: 3,
       allowSearchFilter: true
     };
-
-    this.selectedItems = [{ item_id: 4, item_text: 'Pune' }, { item_id: 6, item_text: 'Navsari' }];
-    this.selectedItems.forEach((item: { item_text: any; }) => {
-      this.languages.push(item.item_text);
-    });
   }
 
   handleFileInputChange(l: FileList, cible: string): void {
@@ -137,26 +138,33 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   }
 
   onItemSelect(item: any) {
-    if (!this.languages.includes(item.item_text)){
+    if (!this.languages.includes(item.item_text)) {
       this.languages.push(item.item_text);
     }
   }
+
   onDeSelect(item: any) {
     const index = this.languages.indexOf(item.item_text);
     if (index > -1) {
       this.languages.splice(index, 1);
     }
   }
+
   onSelectAll(items: any) {
     items.forEach(((item: { item_text: any; }) => {
-      if (!this.languages.includes(item.item_text)){
+      if (!this.languages.includes(item.item_text)) {
         this.languages.push(item.item_text);
       }
     }));
   }
+
   submitData(e: any) {
     e.preventDefault();
     const year: any = document.querySelector('#year');
+    let route = this.nameFormControl.value.trim().replace(' | ', '/');
+    route = route.replace(' ', '-');
+    let websiteUrl = this.urlFormControl.value.trim().replace('https://', '');
+    websiteUrl = websiteUrl.replace('http://', '');
     const body = {
       name: this.nameFormControl.value,
       imageUrl: this.fileLogo,
@@ -173,7 +181,70 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       mockup2: this.fileMockup2,
       logo: this.fileLogo,
     };
-    console.log(body);
+    const fd = new FormData();
+    /*Image Data*/
+    // @ts-ignore
+    fd.append('imageLogo', this.fileLogo);
+    // @ts-ignore
+    fd.append('mockup1', this.fileMockup1);
+    // @ts-ignore
+    fd.append('mockup2', this.fileMockup2);
+
+    /*Body Data*/
+    fd.append('name', this.nameFormControl.value);
+    fd.append('websiteUrl', websiteUrl);
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < this.languages.length; i++) {
+      fd.append('languages[]', this.languages[i]);
+    }
+    fd.append('route', route);
+    fd.append('url', this.urlFormControl.value);
+    fd.append('github', this.githubControl.value);
+    if (this.color) {
+      fd.append('color', this.color);
+    }
+    fd.append('year', year ? year.value : new Date().getFullYear().toString());
+    fd.append('production_time', this.productionTimeControl.value);
+    fd.append('description', this.descriptionControl.value);
+    this.http.post(environment.addProjectAPi, fd)
+      .subscribe((res: any) => {
+        console.log(res);
+        if (res.success) {
+          this.openSnackBar(res.message, 'success-snackbar');
+        } else {
+          this.openSnackBar(res.message, 'error-snackbar');
+        }
+      });
+  }
+
+  fetchLanguages(): void {
+    const temp: { item_id: number; item_text: any; }[] = [];
+    let i = 0;
+    this.http.get(this.languagesApi)
+      .subscribe((res) => {
+        for (const [key, value] of Object.entries(res)) {
+          temp.push({item_id: i, item_text: value.name});
+          i++;
+        }
+        this.dropdownList = temp;
+        const github = temp.find(lang => lang.item_text === 'github');
+        const trello = temp.find(lang => lang.item_text === 'trello');
+        this.selectedItems = [github, trello];
+        this.selectedItems.forEach((item: { item_text: any; }) => {
+          this.languages.push(item.item_text);
+        });
+        environment.languagesObject = res;
+      });
+  }
+
+  openSnackBar(message: string, className: string) {
+    this.snackBar.openFromComponent(SnackbarComponent, {
+      data: message,
+      panelClass: className,
+      horizontalPosition: 'start',
+      verticalPosition: 'bottom',
+      duration: this.durationInSeconds * 1000
+    });
   }
 
   errorGestion(id: string) {

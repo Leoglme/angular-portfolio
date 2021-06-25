@@ -7,6 +7,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {AdministrationComponent} from './administration/administration.component';
 import {ProjectsComponent} from './administration/projects/projects.component';
 import {AdminCategoriesComponent} from './administration/categories/categories.component';
+import {ConnectComponent} from './connect/connect.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'administration/categories',
     component: AdminCategoriesComponent,
+  },
+  {
+    path: 'auth/login',
+    component: ConnectComponent,
   },
   {path: 'projets/:name', component: CategoriesComponent},
   {path: 'projets/:name/:sndName', component: CategoriesComponent},

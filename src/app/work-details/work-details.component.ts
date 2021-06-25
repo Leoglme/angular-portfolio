@@ -69,10 +69,10 @@ export class WorkDetailsComponent implements OnInit {
           (data: any) => {
             this.projects = data;
             this.projectName = data.name;
-            this.projectPicture = 'assets/images/' + data.logo;
+            this.projectPicture = data.logo;
             this.projectDescription = data.description;
-            this.mockup1 = 'assets/images/' + data.mockup1;
-            this.mockup2 = 'assets/images/' + data.mockup2;
+            this.mockup1 = data.mockup1;
+            this.mockup2 = data.mockup2;
             this.websiteUrl = data.url;
             this.productionTime = data.production_time;
             this.github = data.github;

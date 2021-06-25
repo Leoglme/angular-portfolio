@@ -247,18 +247,23 @@ html, body {
     min-height: 1350px !important; }
 
   .icon-list {
-    max-width: 100vw !important; }
+    padding: 0 20px;
+    max-width: 100vw !important;
+    justify-content: center; }
 
   #programming__language {
     height: max-content !important;
-    padding: 8rem 0; }
+    padding: 8rem 16px; }
 
   #work__landing-page {
     align-items: center;
     min-height: 100%; }
 
   .work-landing__container {
-    min-height: 900px; } }
+    min-height: 900px; }
+
+  .details__title {
+    font-size: 1.5rem; } }
 @media (max-width: 680px) {
   .laptop__mockup {
     transform: scale(0.6) translateY(15%); }
@@ -288,7 +293,10 @@ html, body {
 @media (max-width: 515px) {
   .github__link {
     margin-top: 16px;
-    padding: 0.5rem 2.5rem; } }
+    padding: 0.5rem 2.5rem; }
+
+  .details__content {
+    padding: 0; } }
 @media (max-width: 485px) {
   .project__name {
     font-size: 2rem; }
@@ -301,11 +309,20 @@ html, body {
 @media (max-width: 470px) {
   .laptop__mockup {
     transform: scale(0.45) translateY(35%); } }
-@media (max-width: 405px) {
+@media (max-width: 420px) {
   .laptop__mockup {
-    transform: scale(0.4) translateY(35%); } }
+    transform: scale(0.4) translateY(35%); }
+
+  .product__year {
+    font-size: 14px !important; } }
+.icon-list {
+  padding: 0 20px;
+  max-width: 100vw !important;
+  justify-content: center; }
+
 #programming__language {
-  min-height: 600px; }
+  min-height: 600px;
+  padding: 8rem 20px; }
 
 #work__details--page {
   min-height: 800px; }

@@ -5,9 +5,9 @@
   align-items: center;
   color: #ffffff;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  margin-top: 100px;
+  margin-top: 200px;
   padding-bottom: 150px;
-  height: 550px; }
+  height: 700px; }
 
 .about__avatar {
   position: absolute;
@@ -36,17 +36,27 @@
   width: 100%;
   height: 125px; }
 
+@media screen and (max-width: 1000px) {
+  .about__text {
+    padding: 16px 45px;
+    width: 100%; } }
 @media screen and (max-width: 790px) {
+  .about__text {
+    padding: 16px 32px; }
+
   .about__container {
     height: 650px; } }
 @media screen and (max-width: 610px) {
   .about__container {
     height: 700px; } }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 530px) {
   .about__text {
-    width: 80%; } }
-@media screen and (max-width: 500px) {
+    width: 100%;
+    padding: 16px; }
+    .about__text h2 {
+      font-size: 16px; }
+
   .about__container {
-    height: 750px; } }
+    height: 900px; } }
 
 /*# sourceMappingURL=about.component.css.map */

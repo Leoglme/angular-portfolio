@@ -1,6 +1,6 @@
 <app-navigation>
 </app-navigation>
-<div class="main">
+<div class="main" *ngIf="isLoggedIn">
   <!--Stepper add project-->
   <mdb-card class="add__projet--card">
     <div class="two alt-two mt-2" data-aos="zoom-in">
@@ -37,7 +37,7 @@
               <input mdbInput style="cursor: pointer" type="text" id="image" class="form-control" autocomplete="off"
                      [formControl]="imageControl" required readonly [value]="fileImageName"
                      (click)="image_input.click()">
-              <label for="image">Image</label>
+              <label style="cursor: pointer;" for="image">Image</label>
               <mdb-error *ngIf="imageControl.hasError('required')">
                 Ce champ est <strong>requis</strong>
               </mdb-error>

@@ -7,17 +7,21 @@ import {any} from 'codelyzer/util/function';
 export const environment = {
   production: false,
   skillsApi: 'https://dibodev-api.herokuapp.com/categories',
+  languagesApi: 'https://dibodev-api.herokuapp.com/languages',
   projectsApi: 'https://dibodev-api.herokuapp.com/projects',
-  postConnect: 'https://dibodev-api.herokuapp.com/auth/connexion',
+  postConnect: 'https://dibodev-api.herokuapp.com/auth/login',
   projectDetailsApi : 'https://dibodev-api.herokuapp.com/project/',
   categoriesObject: {},
+  languagesObject: {},
   mail: 'contact@dibodev.com',
   urlApp: 'http://localhost:4200',
   githubUrl: 'https://github.com/Leoglme',
   linkedinUrl: 'https://www.linkedin.com/in/dibodev/',
   discordUrl: 'https://discordapp.com/users/466757841001250818',
   sendMailAPI: 'https://dibodev-api.herokuapp.com/sendmail',
-  addCategoryAPi: 'http://localhost:9000/categories/add'
+  addCategoryAPi: 'https://dibodev-api.herokuapp.com/categories/add',
+  addProjectAPi: 'https://dibodev-api.herokuapp.com/project/add',
+  adminUsername: 'leoglme'
 };
 
 /*

@@ -107,7 +107,7 @@ export class PortfolioCardComponent implements OnInit, AfterViewInit {
           data-aos="zoom-in" data-aos-delay="300">
   <div class="view rgba-white-slight waves-light" mdbWavesEffect>
     <!-- Card img -->
-    <img class="img-fluid" src="assets/images/${work.imageUrl}"
+    <img class="img-fluid" src="${work.imageUrl}"
                   alt="Card image cap">
     <a>
       <div class="work__mask mask">

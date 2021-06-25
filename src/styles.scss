@@ -508,3 +508,6 @@ label.star{
   align-items: baseline;
   justify-content: space-between;
 }
+label.star, .mat-datepicker-input {
+  cursor: pointer;
+}

@@ -7,6 +7,8 @@ import {
   MatSnackBarRef,
 } from '@angular/material/snack-bar';
 import {SnackbarComponent} from './snackbar/snackbar.component';
+import {environment} from '../../../environments/environment';
+import {Router} from '@angular/router';
 
 interface CustomBoolean {
   value: string;
@@ -16,11 +18,12 @@ interface CustomBoolean {
 let globalChangeCategoryName = '';
 
 @Component({
-  selector: 'app-categories',
+  selector: 'app-add-categories',
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.scss']
 })
 export class AdminCategoriesComponent implements OnInit, AfterViewInit {
+  isLoggedIn: any;
   rating: number | undefined;
   selectedValue: string | undefined;
   changeCategoryName = '';
@@ -49,11 +52,15 @@ export class AdminCategoriesComponent implements OnInit, AfterViewInit {
     Validators.required
   ]);
 
-  constructor(private http: HttpClient, public snackBar: MatSnackBar) {
+  constructor(private http: HttpClient, public snackBar: MatSnackBar, private router: Router) {
     this.rating = 0;
   }
 
   ngOnInit(): void {
+    this.isLoggedIn = !!localStorage.getItem('isLoggedIn');
+    if (!this.isLoggedIn){
+      this.router.navigate(['/auth/login']);
+    }
   }
 
   ngAfterViewInit(): void {
@@ -73,12 +80,11 @@ export class AdminCategoriesComponent implements OnInit, AfterViewInit {
     // @ts-ignore
     fd.append('rating', this.rating);
     fd.append('route', route);
-    this.http.post('http://localhost:9000/categories/add', fd)
+    this.http.post(environment.addCategoryAPi, fd)
       .subscribe((res: any) => {
         if (res.success){
           this.openSnackBar(this.messageSuccess, 'success-snackbar');
         }else{
-          this.isError = true;
           this.openSnackBar(this.messageError, 'error-snackbar');
         }
       });
