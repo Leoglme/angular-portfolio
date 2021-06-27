@@ -62,7 +62,6 @@ export class CardsComponent implements OnInit, AfterViewInit {
     this.http.get(this.skillsAPI)
       // tslint:disable-next-line:variable-name
       .subscribe(Response => {
-        console.log(Response);
         this.skills = Response;
         environment.categoriesObject = Response;
         if (this.skills !== undefined) {

@@ -11,28 +11,28 @@
       <mat-nav-list id="mobile__list">
         <a _ngcontent-ums-c44="" mat-button=""
            class="tab__sm mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
-           aria-disabled="false" (click)="scrollToElement('about-us'); drawer.toggle()"><span
+           aria-disabled="false" (click)="SmoothVerticalScrolling($event, '#about-us', 275, 'end', 200); drawer.toggle()"><span
           class="mat-button-wrapper"><span
           class="material-icons-round">question_answer</span> À propos</span><span matripple=""
                                                                                    class="mat-ripple mat-button-ripple"></span><span
           class="mat-button-focus-overlay"></span></a>
         <a _ngcontent-ums-c44="" mat-button=""
            class="tab__sm mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
-           aria-disabled="false" (click)="scrollToElement('projets'); drawer.toggle()"><span class="mat-button-wrapper"><span
+           aria-disabled="false" (click)="SmoothVerticalScrolling($event, '#projets', 275, 'end', 120); drawer.toggle()"><span class="mat-button-wrapper"><span
           class="material-icons-round">history_edu</span> Portfolio</span><span
           matripple=""
           class="mat-ripple mat-button-ripple"></span><span
           class="mat-button-focus-overlay"></span></a>
         <a _ngcontent-ums-c44="" mat-button=""
            class="tab__sm mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
-           aria-disabled="false" (click)="scrollToElement('competences'); drawer.toggle()"><span
+           aria-disabled="false" (click)="SmoothVerticalScrolling($event, '#competences', 275, 'end', 120); drawer.toggle()"><span
           class="mat-button-wrapper"><span class="material-icons-round">bar_chart</span> Compétences</span><span
           matripple=""
           class="mat-ripple mat-button-ripple"></span><span
           class="mat-button-focus-overlay"></span></a>
         <a _ngcontent-ums-c44="" mat-button=""
            class="tab__sm mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted" tabindex="0"
-           aria-disabled="false" (click)="scrollToElement('contact'); drawer.toggle()"><span class="mat-button-wrapper"><span
+           aria-disabled="false" (click)="SmoothVerticalScrolling($event, '#contact', 275, 'end', 300); drawer.toggle()"><span class="mat-button-wrapper"><span
           class="material-icons-round">mail</span> Me contacter</span><span
           matripple=""
           class="mat-ripple mat-button-ripple"></span><span
@@ -66,14 +66,14 @@
         <a _ngcontent-ums-c44="" mat-button=""
            class="nav-link active mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted"
            tabindex="0"
-           aria-disabled="false" (click)="scrollToElement('about-us')"><span class="mat-button-wrapper"><span
+           aria-disabled="false" (click)="SmoothVerticalScrolling($event, '#about-us', 275, 'end', 200);"><span class="mat-button-wrapper"><span
           class="material-icons-round">question_answer</span> À propos</span><span matripple=""
                                                                                    class="mat-ripple mat-button-ripple"></span><span
           class="mat-button-focus-overlay"></span></a>
         <a _ngcontent-ums-c44="" mat-button=""
            class="nav-link mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted"
            tabindex="0"
-           aria-disabled="false" (click)="scrollToElement('projets')"><span class="mat-button-wrapper"><span
+           aria-disabled="false" (click)="SmoothVerticalScrolling($event, '#projets', 275, 'end', 120);"><span class="mat-button-wrapper"><span
           class="material-icons-round">history_edu</span> Portfolio</span><span
           matripple=""
           class="mat-ripple mat-button-ripple"></span><span
@@ -81,7 +81,7 @@
         <a offset="30" _ngcontent-ums-c44="" mat-button=""
            class="nav-link mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted"
            tabindex="0"
-           aria-disabled="false" (click)="scrollToElement('competences')"><span class="mat-button-wrapper"><span
+           aria-disabled="false" (click)="SmoothVerticalScrolling($event, '#competences', 275, 'end', 120);"><span class="mat-button-wrapper"><span
           class="material-icons-round">bar_chart</span> Compétences</span><span
           matripple=""
           class="mat-ripple mat-button-ripple"></span><span
@@ -89,7 +89,7 @@
         <a _ngcontent-ums-c44="" mat-button=""
            class="nav-link mat-focus-indicator docs-navbar-link mat-button mat-button-base ng-star-inserted"
            tabindex="0"
-           aria-disabled="false" (click)="scrollToElement('contact')"><span class="mat-button-wrapper"><span
+           aria-disabled="false" (click)="SmoothVerticalScrolling($event, '#contact', 275, 'end', 300);"><span class="mat-button-wrapper"><span
           class="material-icons-round">mail</span> Me contacter</span><span
           matripple=""
           class="mat-ripple mat-button-ripple"></span><span

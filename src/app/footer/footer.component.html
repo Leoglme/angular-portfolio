@@ -36,16 +36,16 @@
           <h6 class="footer__tab--title">Liens utiles</h6>
           <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
           <p>
-            <a (click)="scrollToElement('about-us');">À propos</a>
+            <a (click)="SmoothVerticalScrolling($event, '#about-us', 275, 'end', 200); ">À propos</a>
           </p>
           <p>
-            <a (click)="scrollToElement('projets');">Portfolio</a>
+            <a (click)="SmoothVerticalScrolling($event, '#projets', 275, 'end', 120);">Portfolio</a>
           </p>
           <p>
-            <a (click)="scrollToElement('competences');">Compétences</a>
+            <a (click)="SmoothVerticalScrolling($event, '#competences', 275, 'end', 120);">Compétences</a>
           </p>
           <p>
-            <a (click)="scrollToElement('contact')">Me contacter</a>
+            <a (click)="SmoothVerticalScrolling($event, '#contact', 275, 'end', 300);">Me contacter</a>
           </p>
 
         </div>

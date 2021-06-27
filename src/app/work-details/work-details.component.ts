@@ -49,7 +49,33 @@ export class WorkDetailsComponent implements OnInit {
       return null;
     }
   }
+  SmoothVerticalScrolling(e: any, selector: any, time: any, where: any) {
+    const cible = document.querySelector(selector);
+    // @ts-ignore 768
+    const eTop = cible.getBoundingClientRect().top;
+    const elemHeight = cible.getBoundingClientRect().height;
+    let eAmt = elemHeight >= 100 ? (eTop / 100) + 1 : eTop / 100;
+    let curTime = 0;
+    if (navigator.platform === 'iPhone'){
+      eAmt += 6;
+    }
+    while (curTime <= time) {
+      window.setTimeout(this.SVS_B, curTime, eAmt, where);
+      curTime += time / 100;
+    }
+  }
 
+  SVS_B(eAmt: any, where: any) {
+    if (where === "center" || where === "") {
+      window.scrollBy(0, eAmt / 2);
+    }
+    if (where === "top") {
+      window.scrollBy(0, eAmt);
+    }
+    if (where === "end") {
+      window.scrollBy(0, eAmt);
+    }
+  }
   scrollToElement(event: any, cible: any): void {
     const nextCible = document.getElementById(cible);
     if (nextCible) {
@@ -59,6 +85,9 @@ export class WorkDetailsComponent implements OnInit {
         behavior: 'smooth'
       });
     }
+  }
+  capitalizeFirstLetter(string: string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
   getData() {
@@ -89,9 +118,13 @@ export class WorkDetailsComponent implements OnInit {
                   tempLang.push(lang);
                 }
               });
-              console.log(tempLang);
             }
             this.projectLanguage = tempLang;
+            document.title = 'Dibodev | ' + this.capitalizeFirstLetter(data.name);
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc){
+              metaDesc.setAttribute("content", data.description);
+            }
             this.renderIcons();
             if (!this.projects) {
               this.router.navigate(['./' + this.notFoundRoute]).then(r => (''));

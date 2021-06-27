@@ -15,7 +15,7 @@
         <img  src="{{projectPicture}}" alt="{{projectName}}" class="project__logo">
       </div>
       <div class="button__container">
-        <button (click)="scrollToElement($event, 'work__details--page')" mat-stroked-button class="about__us--btn">En savoir plus</button>
+        <button (click)="SmoothVerticalScrolling($event, '.work-details__container', 275, 'end')" mat-stroked-button class="about__us--btn">En savoir plus</button>
       </div>
     </div>
     <img src="{{mockup1}}"

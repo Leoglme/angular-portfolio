@@ -10,10 +10,7 @@ $('.slider').bxSlider({
   captions: true,
   pager: $('.slider')[0].children.length > 1
 });
-
-
-
-$('.slider__works').bxSlider({
+$('.slider__works').show().bxSlider({
   minSlides: 1,
   maxSlides: 1,
   auto: $('.slider__works')[0].children.length > 1,
@@ -24,4 +21,6 @@ $('.slider__works').bxSlider({
   captions: true,
   pager: $('.slider__works')[0].children.length > 1,
   mode: 'horizontal',
+  preloadImages: 'all'
 });
+//   preloadImages: 'all'

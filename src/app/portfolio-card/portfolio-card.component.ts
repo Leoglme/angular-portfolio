@@ -86,14 +86,18 @@ export class PortfolioCardComponent implements OnInit, AfterViewInit {
   slideGestion() {
     const slider = document.getElementsByClassName('work__container')[0];
     const newSlider = document.getElementsByClassName('slider__works');
+    const allContainer = document.querySelectorAll('.work__container');
     for (const item of this.projects) {
       const countSlider = document.querySelectorAll('.work__container').length;
       if (this.currentSlide > this.perPage) {
+        // console.log('je passe 1 ');
         newSlider[0].innerHTML += '<div class="work__container">' + this.newCard(item) + '</div>';
         this.currentSlide = 0;
       } else if (countSlider !== 1) {
-        document.querySelectorAll('.work__container')[countSlider - 1].innerHTML += this.newCard(item);
-      } else {
+        // console.log('je passe 2', {countSlider: document.querySelectorAll('.work__container')});
+        document.querySelectorAll('.work__container')[countSlider - 2].innerHTML += this.newCard(item);
+      }else {
+        // console.log('je passe 3', {slider, countSlider: document.querySelectorAll('.work__container')});
         slider.innerHTML += this.newCard(item);
       }
       this.currentSlide += 1;

@@ -429,4 +429,7 @@ label.star {
 label.star, .mat-datepicker-input {
   cursor: pointer; }
 
+.bx-viewport {
+  height: 100% !important; }
+
 /*# sourceMappingURL=styles.css.map */
