@@ -54,7 +54,8 @@ export class WorkDetailsComponent implements OnInit {
     // @ts-ignore 768
     const eTop = cible.getBoundingClientRect().top;
     const elemHeight = cible.getBoundingClientRect().height;
-    let eAmt = elemHeight >= 100 ? (eTop / 100) + 1 : eTop / 100;
+    let eAmt = elemHeight >= 1000 ? (eTop / 100) + 1 : (eTop / 100);
+    console.log({eAmt, eAmtMobile: (eTop / 100) + 1, eAmtPc: eTop / 100});
     let curTime = 0;
     if (navigator.platform === 'iPhone'){
       eAmt += 6;

@@ -19,17 +19,19 @@ export class FooterComponent implements OnInit {
 
   SmoothVerticalScrolling(e: any, selector: any, time: any, where: any, margin: any) {
     const cible = document.querySelector(selector);
-    // @ts-ignore 768
-    const eTop = cible.getBoundingClientRect().top - margin;
-    const elemHeight = cible.getBoundingClientRect().height;
-    let eAmt = eTop / 100;
-    let curTime = 0;
-    if (navigator.platform === 'iPhone'){
-      eAmt += 6;
-    }
-    while (curTime <= time) {
-      window.setTimeout(this.SVS_B, curTime, eAmt, where);
-      curTime += time / 100;
+    if (cible){
+      // @ts-ignore 768
+      const eTop = cible.getBoundingClientRect().top - margin;
+      const elemHeight = cible.getBoundingClientRect().height;
+      let eAmt = eTop / 100;
+      let curTime = 0;
+      if (navigator.platform === 'iPhone'){
+        eAmt += 6;
+      }
+      while (curTime <= time) {
+        window.setTimeout(this.SVS_B, curTime, eAmt, where);
+        curTime += time / 100;
+      }
     }
   }
 

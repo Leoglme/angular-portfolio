@@ -90,7 +90,7 @@ export class PortfolioCardComponent implements OnInit, AfterViewInit {
     for (const item of this.projects) {
       const countSlider = document.querySelectorAll('.work__container').length;
       if (this.currentSlide > this.perPage) {
-        // console.log('je passe 1 ');
+        console.log('init slide');
         newSlider[0].innerHTML += '<div class="work__container">' + this.newCard(item) + '</div>';
         this.currentSlide = 0;
       } else if (countSlider !== 1) {
